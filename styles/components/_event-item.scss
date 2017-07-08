@@ -1,0 +1,49 @@
+.event-item {
+  // text-align: center;
+  margin-bottom: 72px;
+  display: block;
+
+  &__image {
+    height: 180px;
+    min-width: 200px;
+    background-color: #ddd;
+    margin-right: 20px;
+    display: none;
+  }
+  &__title {
+    font-family: $serif;
+    font-size: 3rem;
+    line-height: 1.4;
+    // color: #0b1337;
+    // font-weight: bold;
+  }
+
+  &__location {
+    margin-top: 12px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  &__time-price-wrap {
+    // font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.2px;
+    margin-top: 6px;
+    color: #333;
+    div {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 25px;
+    display: inline-block;
+    font-size: 1.5rem;
+    letter-spacing: 0.2px;
+    display: none;
+  }
+}

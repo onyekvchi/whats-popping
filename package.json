@@ -1,0 +1,40 @@
+{
+  "name": "whats-popping",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "history": "^4.6.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-transition-group": "^2.0.2",
+    "redux": "^3.7.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-util": "^3.0.8",
+    "node-sass": "^4.5.3",
+    "postcss-scss": "^0.1.8",
+    "react-moment": "^0.4.2",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-scripts": "1.0.7",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
