@@ -6,7 +6,6 @@ import Events from "./Events";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "./actions/actionCreator";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 const App = props => {
   return (
@@ -25,25 +24,18 @@ const App = props => {
         </div>
       </div>
       <div className="side side--right">
-        <ReactCSSTransitionGroup
-          transitionName="fade"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-        >
-          <Switch key={props.location.pathname} location={props.location}>
-            <Route
-              exact
-              path="/"
-              render={routerProps =>
-                <Events {...{ ...routerProps, ...props }} />}
-            />
-            <Route
-              path="/event/:id"
-              render={routerProps =>
-                <Event {...{ ...routerProps, events: props.events }} />}
-            />
-          </Switch>
-        </ReactCSSTransitionGroup>
+        <Switch key={props.location.pathname} location={props.location}>
+          <Route
+            exact
+            path="/"
+            render={routerProps => <Events {...{ ...routerProps, ...props }} />}
+          />
+          <Route
+            path="/event/:id"
+            render={routerProps =>
+              <Event {...{ ...routerProps, events: props.events }} />}
+          />
+        </Switch>
       </div>
     </div>
   );

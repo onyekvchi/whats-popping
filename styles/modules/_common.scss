@@ -118,25 +118,3 @@ body {
     max-height: 100%;
   }
 }
-
-.fade-enter {
-  opacity: 0.01;
-  transform: translateX(-15px);
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: all 300ms;
-  transform: translateX(0);
-}
-
-.fade-leave {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: all 300ms;
-  transform: translateX(-15px);
-}
