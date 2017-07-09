@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import Event from "./Event";
 import Events from "./Events";
+import Sidebar from "./Sidebar";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -24,19 +25,26 @@ const App = props => {
         </div>
       </div>
       <div className="side side--right">
+        <Route
+          path="/"
+          render={routerProps => <Events {...{ ...routerProps, ...props }} />}
+        />
+      </div>
+      <Sidebar {...props}>
         <Switch key={props.location.pathname} location={props.location}>
           <Route
             exact
-            path="/"
-            render={routerProps => <Events {...{ ...routerProps, ...props }} />}
-          />
-          <Route
             path="/event/:id"
             render={routerProps =>
-              <Event {...{ ...routerProps, events: props.events }} />}
+              <Event
+                {...{
+                  ...props,
+                  eventIndex: routerProps.match.params.id - 1
+                }}
+              />}
           />
         </Switch>
-      </div>
+      </Sidebar>
     </div>
   );
 };

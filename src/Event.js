@@ -3,34 +3,37 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import PropTypes from "prop-types";
 
-const Event = ({ match, events }) => {
-  const event = events[match.params.id - 1];
+const Event = ({ match, events, eventIndex }) => {
+  // const event = events[match.params.id - 1];
+  const event = events[eventIndex];
   console.log(event);
   return (
     <div className="event">
       <div className="container container--sm">
-        <Link to="/">Back</Link>
-        <h1 className="event__title">
+        <Link to="/" className="animFadeIn anim-delay--1">
+          Back
+        </Link>
+        <h1 className="event__title animFadeInUp anim-delay--1">
           {event.title}
         </h1>
-        <div className="event__location">
+        <div className="event__location animFadeInUp anim-delay--2">
           {event.location}
         </div>
-        <div className="event__date">
+        <div className="event__date animFadeInUp anim-delay--3">
           <Moment format="dddd, Do MMMM, YYYY">
             {event.date}
           </Moment>
         </div>
-        <div className="event__time">
+        <div className="event__time animFadeInUp anim-delay--4">
           {event.startTime}
           {event.endTime ? ` – ${event.endTime}` : ""}{" "}
         </div>
-        <div className="event__time">
+        <div className="event__time animFadeInUp anim-delay--5">
           {event.price}
         </div>
-        <div className="hr" />
+        <div className="hr animFadeIn anim-delay--1" />
         {/* <div className="event__image" /> */}
-        <div className="event__description">
+        <div className="event__description animFadeIn anim-delay--1">
           <h2 className="event__subtitle">Our two cents</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia

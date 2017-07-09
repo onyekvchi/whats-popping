@@ -17,7 +17,7 @@
     // letter-spacing: 0.5px;
     margin-right: 20px;
     display: inline-block;
-    padding: 16px 0px 12px 0px;
+    padding: 10px 0px 12px 0px;
     color: #999;
     cursor: pointer;
     transition: all 300ms;
@@ -39,7 +39,7 @@
       width: 0;
       bottom: 0;
       left: 0;
-      background-color: #121212;
+      background-color: black;
       transition: width 300ms;
       content: '';
     }
@@ -51,7 +51,7 @@
     &--active {
       //   border-bottom: 3px solid #121212;
       //   border-bottom: 4px solid #fda82c;
-      color: #121212;
+      color: black;
       &:after {
         width: 100%;
       }
