@@ -23,8 +23,26 @@
   &__location,
   &__date,
   &__time {
-    margin-top: 10px;
-    // color: #333;
+    margin-top: 15px;
+    padding-left: 32px;
+    position: relative;
+    span {
+      display: block;
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+      max-height: 20px;
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      left: 0;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
   &__description {
     // color: #333;

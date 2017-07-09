@@ -3,33 +3,50 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import PropTypes from "prop-types";
 
+import BackIcon from "./svg/Back";
+import CostIcon from "./svg/Cost";
+import LocationIcon from "./svg/Location";
+import DateIcon from "./svg/Date";
+import TimeIcon from "./svg/Time";
+
 const Event = ({ match, events, eventIndex }) => {
   // const event = events[match.params.id - 1];
   const event = events[eventIndex];
-  console.log(event);
   return (
     <div className="event">
       <div className="container container--sm">
-        <Link to="/" className="animFadeIn anim-delay--1">
-          Back
+        <Link to="/">
+          <div className="animFadeIn anim-delay--1">Back</div>
         </Link>
         <h1 className="event__title animFadeInUp anim-delay--1">
           {event.title}
         </h1>
         <div className="event__location animFadeInUp anim-delay--2">
-          {event.location}
+          <LocationIcon />
+          <span>
+            {event.location}
+          </span>
         </div>
         <div className="event__date animFadeInUp anim-delay--3">
-          <Moment format="dddd, Do MMMM, YYYY">
-            {event.date}
-          </Moment>
+          <DateIcon />
+          <span>
+            <Moment format="dddd / Do MMMM, YYYY">
+              {event.date}
+            </Moment>
+          </span>
         </div>
         <div className="event__time animFadeInUp anim-delay--4">
-          {event.startTime}
-          {event.endTime ? ` – ${event.endTime}` : ""}{" "}
+          <TimeIcon />
+          <span>
+            {event.startTime}
+            {event.endTime ? ` – ${event.endTime}` : ""}{" "}
+          </span>
         </div>
         <div className="event__time animFadeInUp anim-delay--5">
-          {event.price}
+          <CostIcon />
+          <span>
+            {event.price}
+          </span>
         </div>
         <div className="hr animFadeIn anim-delay--1" />
         {/* <div className="event__image" /> */}

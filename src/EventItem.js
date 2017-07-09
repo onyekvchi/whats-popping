@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import LocationIcon from "./svg/Location";
+import TimeIcon from "./svg/Time";
+import CostIcon from "./svg/Cost";
+
 const EventItem = ({ id, title, location, startTime, endTime, price }) => {
   return (
     <li className="event-item">
@@ -11,14 +15,23 @@ const EventItem = ({ id, title, location, startTime, endTime, price }) => {
         </h2>
       </Link>
       <div className="event-item__location">
-        {location}
+        <LocationIcon />
+        <span>
+          {location}
+        </span>
       </div>
       <div className="event-item__time-price-wrap">
         <div className="event-item__time">
-          {`${startTime} ${endTime ? " – " + endTime : ""}`}
+          <TimeIcon />
+          <span>
+            {`${startTime} ${endTime ? " – " + endTime : ""}`}
+          </span>
         </div>
         <div className="event-item__price">
-          {price}
+          <CostIcon />
+          <span>
+            {price}
+          </span>
         </div>
       </div>
     </li>
