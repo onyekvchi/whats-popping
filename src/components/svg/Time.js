@@ -1,6 +1,6 @@
 import React from "react";
 
-const TimeIcon = ({ size }) => {
+const TimeIcon = () => {
   return (
     <div className="icon">
       <svg

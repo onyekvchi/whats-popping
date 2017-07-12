@@ -1,6 +1,6 @@
 import React from "react";
 
-const CostIcon = ({ size }) => {
+const CostIcon = () => {
   return (
     <div className="icon">
       <svg

@@ -1,7 +1,6 @@
 import React from "react";
 
-const Sidebar = ({ location, children }) => {
-  const isActive = location.pathname.split("/")[1] === "event";
+const Sidebar = ({ isActive, children }) => {
   return (
     <div className={`sidebar ${isActive && "sidebar--opened"}`}>
       {children}

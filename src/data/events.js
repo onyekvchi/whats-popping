@@ -7,7 +7,9 @@ const events = [
       "Hardcore Entertainment, Mainland Sports Arena – Murhi House Plot 45 Omole Layout, Opposite Big-Treat Omole Junction, Ikeja.",
     startTime: "5pm",
     endTime: "8pm",
-    price: "NGN 5,000"
+    price: "NGN 5,000",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 2,
@@ -16,7 +18,9 @@ const events = [
     location: "Muri Okunola Park – Ahmadu Bello Way, Victoria Island.",
     startTime: "10am",
     endTime: null,
-    price: "Free"
+    price: "Free",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 3,
@@ -26,7 +30,9 @@ const events = [
       "The New Africa Shrine – 1 NERDC Road, Off Hakeem Balogun Street, Agidingbi, Ikeja.",
     startTime: "7pm",
     endTime: "11pm",
-    price: "NGN 500"
+    price: "NGN 500",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 4,
@@ -35,7 +41,9 @@ const events = [
     location: "Broad Street, Lagos Island.",
     startTime: "10am",
     endTime: null,
-    price: "Free"
+    price: "Free",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 5,
@@ -44,7 +52,9 @@ const events = [
     location: "Muri Okunola Park – Ahmadu Bello Way, Victoria Island.",
     startTime: "8pm",
     endTime: "12am",
-    price: "NGN 500"
+    price: "NGN 500",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 6,
@@ -53,7 +63,9 @@ const events = [
     location: "City Hall Rooftop, 30 Catholic Mission Street, Lagos Island",
     startTime: "7pm",
     endTime: null,
-    price: "Free"
+    price: "Free",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 7,
@@ -62,7 +74,9 @@ const events = [
     location: "4, Olumo Road, Parkview, Ikoyi, Lagos",
     startTime: "1pm",
     endTime: "8pm",
-    price: "NGN 5,000"
+    price: "NGN 5,000",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 8,
@@ -71,7 +85,9 @@ const events = [
     location: "Crossroads Restaurant and Bar, Eko Hotel, Lagos",
     startTime: "8pm",
     endTime: null,
-    price: "Free"
+    price: "Free",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   },
   {
     id: 9,
@@ -80,7 +96,9 @@ const events = [
     location: "Crossroads Restaurant and Bar, Eko Hotel, Lagos",
     startTime: "8pm",
     endTime: null,
-    price: "Free"
+    price: "Free",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veritatis laboriosam sed ullam consequatur non reiciendis repellendus, maxime voluptatum, aut incidunt consequuntur accusantium hic. Blanditiis illo magnam libero dolorem itaque."
   }
 ];
 

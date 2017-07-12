@@ -3,21 +3,19 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import PropTypes from "prop-types";
 
-import BackIcon from "./svg/Back";
+// import BackIcon from "./svg/Back";
 import CostIcon from "./svg/Cost";
 import LocationIcon from "./svg/Location";
 import DateIcon from "./svg/Date";
 import TimeIcon from "./svg/Time";
 
-const Event = ({ match, events, eventIndex }) => {
-  // const event = events[match.params.id - 1];
-  const event = events[eventIndex];
+const Event = ({ event }) => {
   return (
     <div className="event">
       <div className="container container--sm">
-        <Link to="/">
-          <div className="animFadeIn anim-delay--1">Back</div>
-        </Link>
+        <div className="animFadeIn anim-delay--1">
+          <Link to="/">Back</Link>
+        </div>
         <h1 className="event__title animFadeInUp anim-delay--1">
           {event.title}
         </h1>
