@@ -1,8 +1,10 @@
 # TODO
-- ~API for events~
-- Redux Middleware to respond to API
-- ~Organize folder structure~
+- ~~API for events~~
+- ~~Redux Middleware to respond to API~~
+- ~~Organize folder structure~~
+- Add shimmer for when events are loading
 - Style left side finally 
+- sort out entry from event URL
 - Responsiveness
 - write articles
     - sidebar animations
@@ -11,3 +13,4 @@
     - how the damn thing works (composability and virtual dom)
 - Admin Section
 - Make it a PWA !
+- Send notifications when new events are put up (on Thursdays)
