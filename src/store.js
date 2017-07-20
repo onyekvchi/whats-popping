@@ -1,12 +1,9 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import createHistory from "history/createBrowserHistory";
 
 import rootReducer from "./reducers/index";
 import rootSaga from "./sagas/index";
-
-// import events from "./data/events";
-// import days from "./data/days";
 
 export const history = createHistory();
 
@@ -18,11 +15,11 @@ const defaultState = {
 	events: []
 };
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
 	rootReducer,
 	defaultState,
-	applyMiddleware(sagaMiddleware),
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+	composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 
 sagaMiddleware.run(rootSaga);
