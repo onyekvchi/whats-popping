@@ -1,12 +1,12 @@
-import { SET_ACTIVE_DATE } from '../actions/actionCreator';
-
 function activeDate(state = null, action) {
-    switch(action.type){
-        case SET_ACTIVE_DATE:
-            return action.date;
-        default:
-            return state;
-    }
-};
+	switch (action.type) {
+		case "SET_ACTIVE_DATE":
+			return action.payload;
+		case "EVENTS_FETCH_SUCCEEDED":
+			return action.payload.days[0];
+		default:
+			return state;
+	}
+}
 
 export default activeDate;

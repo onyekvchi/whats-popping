@@ -1,8 +1,10 @@
 function days(state = [], action) {
-    switch(action.type){
-        default:
-            return state;
-    }
+	switch (action.type) {
+		case "EVENTS_FETCH_SUCCEEDED":
+			return action.payload.days;
+		default:
+			return state;
+	}
 }
 
 export default days;
