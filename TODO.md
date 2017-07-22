@@ -6,6 +6,7 @@
 - Style left side finally 
 - sort out entry from event URL
 - Responsiveness
+- Migrate to styled-components
 - write articles
     - sidebar animations
     - loading animation

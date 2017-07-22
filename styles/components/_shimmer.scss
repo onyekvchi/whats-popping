@@ -1,0 +1,71 @@
+$spacing: 8px;
+$spacing-lg: 8px;
+$height: 18px;
+$height-lg: 24px;
+$shimmer-height: 144px;
+
+.shimmer {
+  height: $shimmer-height;
+  &__background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #f4f4f4 10%, #eee 30%, #f4f4f4 50%);
+    background-size: 490px 120px;
+    height: $height-lg + ($spacing + $spacing-lg) + ($height * 2);
+    position: relative;
+  }
+  &__mask {
+    background-color: white;
+    position: absolute;
+
+    &--title-right {
+      top: 0;
+      right: 0;
+      height: $height-lg;
+      width: 200px;
+    }
+    &--title-bottom {
+      top: $height-lg;
+      right: 0;
+      height: $spacing-lg;
+      width: 100%;
+    }
+    &--location-right {
+      top: $height-lg + $spacing-lg;
+      right: 0;
+      height: $height;
+      width: 42px;
+    }
+    &--location-bottom {
+      top: $height-lg + $spacing-lg + $height;
+      right: 0;
+      height: $spacing;
+      width: 100%;
+    }
+    &--time-right {
+      top: $height-lg + $spacing-lg + $spacing + $height;
+      left: 48px;
+      height: $height;
+      width: 8px;
+    }
+    &--price-right {
+      top: $height-lg + $spacing-lg + $spacing + $height;
+      left: 106px;
+      height: $height;
+      width: 390px;
+    }
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
