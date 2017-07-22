@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import * as actionCreators from "../actions/actionCreator";
-import Event from "../components/Event";
 import DayPicker from "../components/DayPicker";
 import EventsList from "../components/EventsList";
 import Sidebar from "../components/Sidebar";
@@ -32,20 +31,7 @@ class App extends Component {
               </div>}
           />
         </div>
-        <Sidebar isActive={props.location.pathname.split("/")[1] === "event"}>
-          <Switch key={props.location.pathname} location={props.location}>
-            <Route
-              exact
-              path="/event/:id"
-              render={routerProps =>
-                <Event
-                  event={props.events.find(
-                    event => event._id === routerProps.match.params.id
-                  )}
-                />}
-            />
-          </Switch>
-        </Sidebar>
+        <Sidebar {...props} />
       </div>
     );
   }

@@ -1,11 +1,13 @@
-$spacing: 8px;
-$spacing-lg: 8px;
-$height: 18px;
-$height-lg: 24px;
-$shimmer-height: 144px;
+$spacing: 12px;
+$spacing-lg: 24px;
+$height: 32px;
+$height-lg: 64px;
+$shimmer-height: 300px;
 
-.shimmer {
+.event-shimmer {
   height: $shimmer-height;
+  margin-top: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   &__background {
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -15,23 +17,23 @@ $shimmer-height: 144px;
     background: #f6f7f8;
     background: linear-gradient(
       to right,
-      #f4f4f4 10%,
-      #e8e8e8 30%,
-      #f4f4f4 50%
+      rgba(0, 0, 0, 0.04) 10%,
+      rgba(0, 0, 0, 0.08) 30%,
+      rgba(0, 0, 0, 0.04) 50%
     );
     background-size: 490px 120px;
-    height: $height-lg + ($spacing + $spacing-lg) + ($height * 2);
+    height: $height-lg + $spacing-lg + ($height * 4) + ($spacing * 3);
     position: relative;
   }
   &__mask {
-    background-color: white;
+    background-color: #feb239;
     position: absolute;
 
     &--title-right {
       top: 0;
       right: 0;
       height: $height-lg;
-      width: 200px;
+      width: 120px;
     }
     &--title-bottom {
       top: $height-lg;
@@ -51,17 +53,35 @@ $shimmer-height: 144px;
       height: $spacing;
       width: 100%;
     }
-    &--time-right {
-      top: $height-lg + $spacing-lg + $spacing + $height;
-      left: 48px;
+    &--date-right {
+      top: $height-lg + $spacing-lg + $height + $spacing;
+      right: 0;
       height: $height;
-      width: 8px;
+      width: 200px;
+    }
+    &--date-bottom {
+      top: $height-lg + $spacing-lg + ($height * 2) + $spacing;
+      right: 0;
+      height: $spacing;
+      width: 100%;
+    }
+    &--time-right {
+      top: $height-lg + $spacing-lg + ($height * 2) + ($spacing * 2);
+      right: 0;
+      height: $height;
+      width: 75%;
+    }
+    &--time-bottom {
+      top: $height-lg + $spacing-lg + ($height * 3) + ($spacing * 2);
+      right: 0;
+      height: $spacing;
+      width: 100%;
     }
     &--price-right {
-      top: $height-lg + $spacing-lg + $spacing + $height;
-      left: 106px;
+      top: $height-lg + $spacing-lg + ($height * 3) + ($spacing * 3);
+      right: 0;
       height: $height;
-      width: 390px;
+      width: 85%;
     }
   }
 }
