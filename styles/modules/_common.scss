@@ -49,8 +49,12 @@ body {
   margin: 0 auto;
 
   &--sm {
-    max-width: 580px;
+    max-width: 550px;
     padding: 0 45px;
+  }
+
+  &--float-left {
+    margin: 0 auto 0 45px;
   }
 }
 

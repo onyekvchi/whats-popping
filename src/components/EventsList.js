@@ -10,7 +10,7 @@ const EventsList = ({ activeDate, events }) => {
   );
   return (
     <div className="events">
-      <ul className="container container--sm">
+      <ul className="container container--sm container--float-left">
         {events.length > 0
           ? <ReactCSSTransitionGroup
               transitionName="fade"

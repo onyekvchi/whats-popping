@@ -7,7 +7,7 @@ import EventShimmer from "./EventShimmer";
 const Event = ({ event }) => {
   return (
     <div className="event">
-      <div className="container container--sm">
+      <div className="container container--sm container--float-left">
         <div className="animFadeIn anim-delay--1">
           <Link to="/">Back</Link>
         </div>
