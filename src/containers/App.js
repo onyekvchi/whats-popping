@@ -8,6 +8,7 @@ import DayPicker from "../components/DayPicker";
 import EventsList from "../components/EventsList";
 import Sidebar from "../components/Sidebar";
 import Left from "../components/Left";
+import Right from "../components/Right";
 import store from "../store";
 
 class App extends Component {
@@ -20,18 +21,8 @@ class App extends Component {
 
     return (
       <div className="app">
-        <Left />
-        <div className="side side--right">
-          <Route
-            path="/"
-            render={routerProps =>
-              <div className="full-height">
-                <DayPicker {...{ ...routerProps, ...props }} />
-                <EventsList {...{ ...routerProps, ...props }} />
-              </div>}
-          />
-        </div>
-        <Sidebar {...props} />
+        <Left {...props} />
+        <Right {...props} />
       </div>
     );
   }

@@ -68,15 +68,23 @@
   animation-fill-mode: both;
 }
 
+.animExtraLong {
+  animation-duration: 750ms;
+  animation-fill-mode: both;
+}
+
 @for $i from 0 through 8 {
   .anim-delay--#{$i} {
-    animation-delay: 200ms + ($i * 100);
+    animation-delay: 100ms + ($i * 100);
   }
 }
 
 .animFadeIn {
   @extend .fadeIn;
-  @extend .animLong;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  // @extend .animExtraLong;
+  // animation-delay: 650ms;
 }
 
 .animFadeInUp {

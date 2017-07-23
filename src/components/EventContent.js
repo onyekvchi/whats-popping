@@ -8,37 +8,37 @@ import TimeIcon from "./svg/Time";
 
 const EventContent = ({ event }) => {
   return (
-    <div>
-      <h1 className="event__title animFadeInUp anim-delay--1">
+    <div className="animFadeIn anim-delay--1">
+      <h1 className="event__title">
         {event.title}
       </h1>
-      <div className="event__location animFadeInUp anim-delay--2">
+      <div className="event__location">
         <LocationIcon />
         <span>
           {event.location}
         </span>
       </div>
-      <div className="event__date animFadeInUp anim-delay--3">
+      <div className="event__date">
         <DateIcon />
         <span>
           {moment(event.date, "YYYYMMDD").format("dddd / Do MMMM, YYYY")}
         </span>
       </div>
-      <div className="event__time animFadeInUp anim-delay--4">
+      <div className="event__time">
         <TimeIcon />
         <span>
           {event.startTime}
           {event.endTime ? ` – ${event.endTime}` : ""}{" "}
         </span>
       </div>
-      <div className="event__time animFadeInUp anim-delay--5">
+      <div className="event__time">
         <CostIcon />
         <span>
           {event.price}
         </span>
       </div>
       <div className="hr animFadeIn anim-delay--1" />
-      <div className="event__description animFadeIn anim-delay--1">
+      <div className="event__description animFadeIn">
         <h2 className="event__subtitle">Our two cents</h2>
         <p>
           {event.description}

@@ -26,7 +26,8 @@ $shimmer-height: 300px;
     position: relative;
   }
   &__mask {
-    background-color: #feb239;
+    // background-color: #feb239;
+    background-color: white;
     position: absolute;
 
     &--title-right {
