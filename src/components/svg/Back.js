@@ -5,8 +5,8 @@ const BackIcon = () => {
     <div className="icon">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="48"
-        height="48"
+        width="20"
+        height="20"
         viewBox="0 0 48 48"
       >
         <clipPath id="a" clip-rule="evenodd">

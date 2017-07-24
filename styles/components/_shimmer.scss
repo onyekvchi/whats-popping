@@ -15,16 +15,16 @@ $shimmer-height: 144px;
     background: #f6f7f8;
     background: linear-gradient(
       to right,
-      #f4f4f4 10%,
-      #e8e8e8 30%,
-      #f4f4f4 50%
+      rgba(0, 0, 0, 0.04) 10%,
+      rgba(0, 0, 0, 0.08) 30%,
+      rgba(0, 0, 0, 0.04) 50%
     );
     background-size: 490px 120px;
     height: $height-lg + ($spacing + $spacing-lg) + ($height * 2);
     position: relative;
   }
   &__mask {
-    background-color: white;
+    background-color: $color-bg;
     position: absolute;
 
     &--title-right {

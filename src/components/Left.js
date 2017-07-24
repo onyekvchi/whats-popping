@@ -3,7 +3,7 @@ import React from "react";
 const Left = () => {
   return (
     <div className="side side--left">
-      <div className="site">
+      <div className="site animFadeIn">
         <div className="container container--sm">
           <h1 className="site__title">
             What‘s<br />Popping?

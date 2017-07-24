@@ -5,6 +5,7 @@ a {
 
 html {
   font-size: 62.5%;
+  overflow-y: hidden;
   @include screen(small) {
     font-size: 58%;
   }
@@ -28,15 +29,6 @@ body {
   font-weight: 400;
   overflow: hidden;
   color: black;
-  //   border: 4px solid #ffc6a5;
-  //   border: 4px solid black;
-  //   border: 9px solid black;
-  //   background-color: #fbf0a0;
-  //   background-color: #ffc6a5;
-  //   background-color: #dedaca;
-  //   background-color: #fadb7f;
-  //   background-color: #ffe4a1;
-  //   background-color: #ffebb8;
 }
 
 .full-height {
@@ -51,52 +43,30 @@ body {
   &--sm {
     max-width: 550px;
     padding: 0 45px;
+    @include screen(med-small) {
+      padding: 0 30px;
+    }
   }
 
   &--float-left {
     margin: 0 auto 0 45px;
+    @include screen(med) {
+      margin: 0 auto;
+    }
+    @include screen(med-small) {
+      margin: 0 auto;
+    }
   }
 }
 
 .app {
   height: 100%;
-  //   border: 5px solid black;
 }
 
 .side {
-  //   $sideWidth: 50%;
   position: relative;
   float: left;
   height: 100%;
-
-  &--left {
-    // background-color: #e6e6e6;
-    // background-color: #ffe4a1;
-    // background-color: black;
-    width: 100% - $sideWidth;
-    position: relative;
-    z-index: 3;
-    &:after {
-      content: '';
-      position: absolute;
-      //   z-index: -1;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0.6;
-      background-size: cover;
-      //   background-image: url('https://s-media-cache-ak0.pinimg.com/564x/de/c9/8f/dec98f8378523918e07acb4d75298cdd.jpg');
-      //   background-image: url('https://s-media-cache-ak0.pinimg.com/564x/15/2d/2b/152d2be4306a5b5f48abfac14cece76a.jpg');
-      //   background-image: url('https://s-media-cache-ak0.pinimg.com/564x/0d/00/23/0d00239a73087e19eec1a5f3c25a4b41.jpg');
-      //   background-image: url('https://s-media-cache-ak0.pinimg.com/564x/bb/fc/7d/bbfc7d89f7090f2b0e6f2fa206482e2a.jpg');
-    }
-  }
-
-  &--right {
-    width: $sideWidth;
-    // background-color: #fff4e4;
-  }
 }
 
 .flex {

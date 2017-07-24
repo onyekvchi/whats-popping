@@ -2,12 +2,10 @@
   padding-top: 45px;
   padding-bottom: 45px;
   position: relative;
-  // background-color: #fff4e4;
   height: 100%;
   overflow: scroll;
   &__title {
     font-family: $serif;
-    // letter-spacing: -0.1px;
     font-size: 3.6rem;
     line-height: 1.4;
     margin-top: 45px;
@@ -68,7 +66,9 @@
   height: 18px;
   width: 36px;
   display: inline-block;
-  &:before, &:after, span {
+  &:before,
+  &:after,
+  span {
     content: '';
     display: block;
     height: 2px;

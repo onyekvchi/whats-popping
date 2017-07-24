@@ -1,6 +1,17 @@
+.side--right {
+  width: $sideWidth;
+  background-color: $color-bg;
+  overflow-x: hidden;
+
+  @include screen(med-small) {
+    width: 100%;
+  }
+}
+
 .event {
   position: absolute;
-  left: 300px;
+  left: 0;
+  transform: translateX(600px);
   top: 0;
   width: 100%;
   height: 100%;
@@ -9,15 +20,16 @@
 
   &--active {
     opacity: 1;
-    left: 0;
-    transition: all 450ms cubic-bezier(.23, 1.05, .38, .99);
+    transform: translateX(0);
+    transition: all 300ms cubic-bezier(.23, 1.05, .38, .99);
     transition-delay: 150ms;
   }
 }
 
 .event-list {
   position: absolute;
-  left: -300px;
+  left: 0;
+  transform: translateX(-600px);
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -25,9 +37,8 @@
 
   &--active {
     opacity: 1;
-    left: 0;
-    top: 0;
-    transition: all 450ms cubic-bezier(.04, .37, .03, .96);
+    transform: translateX(0);
+    transition: all 300ms cubic-bezier(.04, .37, .03, .96);
     transition-delay: 150ms;
   }
 }

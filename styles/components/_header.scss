@@ -1,31 +1,26 @@
 .header {
-  // padding: 15px 0;
-  background-color: white;
-  //   background-color: #fff4e4;
-  // border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: $color-bg;
   position: absolute;
   right: 0;
   top: 0;
   width: 100%;
   z-index: 3;
-  //   box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 
   &__link {
     font-weight: 600;
     font-size: 1.2rem;
     text-transform: uppercase;
-    // letter-spacing: 0.5px;
     margin-right: 30px;
     display: inline-block;
-    padding: 10px 0px 12px 0px;
-    color: #999;
+    padding: 15px 0px 17px 0px;
+    color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
     transition: all 300ms;
     position: relative;
 
     .header__date {
       display: inline-block;
-      //   color: #ccc;
       margin-left: 4px;
       &:before {
         content: '/';
@@ -41,7 +36,6 @@
       left: 0;
       background-color: black;
       transition: width 300ms;
-      border-radius: 6px;
       content: '';
     }
 
@@ -50,14 +44,9 @@
     }
 
     &--active {
-      //   border-bottom: 3px solid #121212;
-      //   border-bottom: 4px solid #fda82c;
       color: black;
       &:after {
         width: 100%;
-      }
-      .header__date {
-        // color: #999;
       }
     }
   }

@@ -1,7 +1,10 @@
 .event-item {
-  // text-align: center;
   margin-bottom: 72px;
   display: block;
+
+  @include screen(small) {
+    margin-bottom: 60px;
+  }
 
   &__image {
     height: 180px;
@@ -14,8 +17,10 @@
     font-family: $serif;
     font-size: 3rem;
     line-height: 1.4;
-    // color: #0b1337;
-    // font-weight: bold;
+    @include screen(small) {
+      font-size: 2.7rem;
+      line-height: 1.25;
+    }
   }
 
   &__location {
@@ -26,10 +31,8 @@
   }
 
   &__time-price-wrap {
-    // font-weight: 600;
     font-size: 1.4rem;
     margin-top: 8px;
-    // color: #333;
     div {
       display: inline-block;
       margin-right: 20px;
