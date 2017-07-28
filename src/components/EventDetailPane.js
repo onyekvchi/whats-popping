@@ -5,8 +5,8 @@ import EventShimmer from "./EventShimmer";
 import BackIcon from "./svg/Back";
 
 const EventDetailPane = props => {
-  console.log(props);
-  const [waste, path, id] = props.location.pathname.split("/");
+  const path = props.location.pathname.split("/")[1];
+  const id = props.location.pathname.split("/")[2];
   const isActive = path === "event";
   const event = props.events.find(event => event._id === id);
   return (

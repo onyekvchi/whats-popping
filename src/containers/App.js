@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { Route, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import * as actionCreators from "../actions/actionCreator";
-import DayPicker from "../components/DayPicker";
-import EventsList from "../components/EventsList";
-import Sidebar from "../components/Sidebar";
 import Left from "../components/Left";
 import Right from "../components/Right";
+import MobileToggler from "../components/MobileToggler";
 import store from "../store";
 
 class App extends Component {
@@ -23,6 +21,7 @@ class App extends Component {
       <div className="app">
         <Left {...props} />
         <Right {...props} />
+        <MobileToggler {...props} />
       </div>
     );
   }

@@ -6,6 +6,7 @@ a {
 html {
   font-size: 62.5%;
   overflow-y: hidden;
+  background-color: #eb6369;
   @include screen(small) {
     font-size: 58%;
   }
@@ -45,6 +46,9 @@ body {
     padding: 0 45px;
     @include screen(med-small) {
       padding: 0 30px;
+    }
+    @include screen(small) {
+      padding: 0 20px;
     }
   }
 

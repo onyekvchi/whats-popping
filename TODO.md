@@ -5,16 +5,17 @@
 - ~~Redux Middleware to respond to API~~
 - ~~Organize folder structure~~
 - ~~Add shimmer for when events are loading~~
-- Style left side finally 
+- ~~Style left side finally~~
 - ~~sort out entry from event URL~~
-- Responsiveness
+- ~~Responsiveness~~
+- Fix sidebar on mobile
+- Admin Section
 
 
 ### 2
 
 - Make it a PWA !
 - Send notifications when new events are put up (on Thursdays)
-- Admin Section
 - write articles
     - sidebar animations
     - loading animation

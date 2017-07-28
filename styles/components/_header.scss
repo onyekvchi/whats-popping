@@ -7,6 +7,11 @@
   z-index: 3;
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 
+  &__links {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
   &__link {
     font-weight: 600;
     font-size: 1.2rem;
@@ -18,6 +23,10 @@
     cursor: pointer;
     transition: all 300ms;
     position: relative;
+
+    @include screen(small) {
+      margin-right: 20px;
+    }
 
     .header__date {
       display: inline-block;

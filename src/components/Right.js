@@ -1,10 +1,8 @@
 import React from "react";
 
-import { Link, Route } from "react-router-dom";
-import DayPicker from "./DayPicker";
+import { Route } from "react-router-dom";
 import EventListPane from "./EventListPane";
 import EventDetailPane from "./EventDetailPane";
-import BackIcon from "./svg/Back";
 
 const Right = props => {
   return (
