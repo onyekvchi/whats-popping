@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { Shimmer, ShimmerBackground, ShimmerMask } from "./Shimmer";
 
 const EventShimmer = ({ event }) => {
   const height = 32;
@@ -7,7 +7,7 @@ const EventShimmer = ({ event }) => {
   const spacing = 12;
   const largeSpacing = 24;
   return (
-    <Shimmer>
+    <Shimmer borderBottom marginTop="60px">
       <ShimmerBackground>
         <ShimmerMask top="0" height={largeHeight} width="120px" />
         <ShimmerMask top={largeHeight} height={largeSpacing} width="100%" />
@@ -56,47 +56,5 @@ const EventShimmer = ({ event }) => {
     </Shimmer>
   );
 };
-
-const Shimmer = styled.div`
-  height: ${props => props.height || "300px"};
-  margin-top: 60px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-`;
-
-const ShimmerBackground = styled.div`
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: placeHolderShimmer;
-  animation-timing-function: linear;
-  background: #f6f7f8;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.04) 10%,
-    rgba(0, 0, 0, 0.08) 30%,
-    rgba(0, 0, 0, 0.04) 50%
-  );
-  background-size: 490px 120px;
-  height: 252px;
-  position: relative;
-
-  @keyframes placeHolderShimmer {
-    0% {
-      background-position: -500px 0;
-    }
-    100% {
-      background-position: 500px 0;
-    }
-  }
-`;
-
-const ShimmerMask = styled.div`
-  background-color: white;
-  position: absolute;
-  top: ${props => props.top + "px"};
-  right: ${props => props.right || 0};
-  height: ${props => props.height}px;
-  width: ${props => props.width || "100%"};
-`;
 
 export default EventShimmer;

@@ -3,10 +3,11 @@ import React from "react";
 import { Route } from "react-router-dom";
 import EventListPane from "./EventListPane";
 import EventDetailPane from "./EventDetailPane";
+import Side from "./Side";
 
 const Right = props => {
   return (
-    <div className="side side--right">
+    <Side float="right">
       <Route
         path="/"
         render={routeProps =>
@@ -17,7 +18,7 @@ const Right = props => {
         render={routeProps =>
           <EventDetailPane {...{ ...props, ...routeProps }} />}
       />
-    </div>
+    </Side>
   );
 };
 
