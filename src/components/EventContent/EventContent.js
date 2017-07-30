@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EventTitle = styled.h1`
-  font-family: 'TiemposWeb';
+  font-family: ${props => props.theme.serif};
   font-size: 3.6rem;
   line-height: 1.4;
   margin-top: 45px;
@@ -13,7 +13,7 @@ const EventTitle = styled.h1`
 `;
 
 const EventSubTitle = styled.h2`
-  font-family: "TiemposWeb";
+  font-family: ${props => props.theme.serif};
   font-size: 2.4rem;
   line-height: 1.1;
   margin-bottom: 15px;

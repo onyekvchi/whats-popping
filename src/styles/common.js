@@ -9,7 +9,7 @@ const common = css`
   html {
     font-size: 62.5%;
     overflow-y: hidden;
-    background-color: #eb6369;
+    background-color: black;
     @media (max-width: 450px) {
         font-size: 58%;
     }

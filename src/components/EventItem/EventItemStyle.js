@@ -9,7 +9,7 @@ const EventItemStyle = styled.div`
 `;
 
 const EventItemTitle = styled.h1`
-  font-family: "TiemposWeb";
+  font-family: ${props => props.theme.serif};
   font-size: 3rem;
   line-height: 1.4;
   @media (max-width: 450px) {

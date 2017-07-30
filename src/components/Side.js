@@ -1,4 +1,13 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const sidewaysAnimation = keyframes`
+  0%, 100% {
+    transform: translateX(0)
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+`;
 
 const Side = styled.div`
   position: relative;
@@ -8,7 +17,7 @@ const Side = styled.div`
   ${props =>
     props.float === "left" &&
     css`
-    background-color: #f06669;
+    background-color: ${props => props.theme.background};
     width: ${100 - 61.803398875}%;
     position: relative;
     z-index: 3;
@@ -16,6 +25,8 @@ const Side = styled.div`
     justify-content: center;
     align-items: center;
     padding: 25px;
+    border-right: 5px solid black;
+    overflow: hidden;
     &:after {
       content: '';
       position: absolute;
@@ -23,11 +34,15 @@ const Side = styled.div`
       left: 0;
       top: 0;
       height: 100%;
-      width: 100%;
+      width: 200%;
       opacity: 1;
       z-index: -1;
-      background-size: cover;
-      background-image: url('https://preview.ibb.co/cKPtH5/WHATSPOPPING_PATTERN_1.png');
+      background-repeat: repeat;
+      background-image: url('${props => props.theme.pattern}');
+      animation-name: ${sidewaysAnimation};
+      animation-duration: 200s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear; 
     }
     @media (max-width: 768px) {
       display: none;

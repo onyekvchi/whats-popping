@@ -17,7 +17,7 @@ const LeftWrap = styled.div`
 
 const LeftTitle = styled.h1`
   font-size: 5rem;
-  font-family: "TiemposWeb";
+  font-family: ${props => props.theme.serif};
   line-height: 1.2;
   @media (max-width: 1000px) {
     font-size: 3rem;
@@ -25,9 +25,9 @@ const LeftTitle = styled.h1`
 `;
 
 const LeftDivider = styled.div`
-  height: 3px;
+  height: 4px;
   width: 50px;
-  background-color: white;
+  background-color: ${props => props.theme.background};
   margin: 36px auto;
 `;
 
