@@ -13,7 +13,7 @@ const EventItemTitle = styled.h1`
   font-size: 3rem;
   line-height: 1.4;
   @media (max-width: 450px) {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     line-height: 1.25;
   }
 `;

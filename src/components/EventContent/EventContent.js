@@ -6,6 +6,10 @@ const EventTitle = styled.h1`
   line-height: 1.4;
   margin-top: 45px;
   margin-bottom: 20px;
+  @media (max-width: 450px) {
+    font-size: 2.7rem;
+    margin-top: 20px;
+  }
 `;
 
 const EventSubTitle = styled.h2`

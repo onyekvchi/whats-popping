@@ -18,6 +18,11 @@ const Event = styled.div`
   transition: transform 150ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
     opacity 150ms ease-in-out;
 
+  @media (max-width: 450px) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+
   ${props =>
     props.active &&
     css`
