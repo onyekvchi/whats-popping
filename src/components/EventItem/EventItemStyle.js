@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EventItemStyle = styled.div`
-  margin-bottom: 72px;
+  margin-bottom: 64px;
   display: block;
   @media screen and (max-width: 450px) {
     margin-bottom: 60px;

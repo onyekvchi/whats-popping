@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import * as actionCreators from "../actions/actionCreator";
 import Left from "../components/Left";
 import Right from "../components/Right";
-import MobileToggler from "../components/MobileToggler";
 import store from "../store";
 
 class App extends Component {
@@ -21,7 +20,6 @@ class App extends Component {
       <div className="app">
         <Left {...props} />
         <Right {...props} />
-        <MobileToggler {...props} />
       </div>
     );
   }

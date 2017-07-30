@@ -45,7 +45,7 @@ const EventContent = ({ event }) => {
         </EventIcon>
         <div>
           {event.startTime}
-          {event.endTime ? ` – ${event.endTime}` : ""}{" "}
+          {event.endTime ? ` – ${event.endTime}` : ""}
         </div>
       </EventDetail>
       <EventDetail>

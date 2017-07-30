@@ -6,9 +6,9 @@ import { injectGlobal } from "styled-components";
 import store, { history } from "./store";
 import registerServiceWorker from "./registerServiceWorker";
 import App from "./containers/App";
-import { fonts, common, transitions } from "./styles";
+import { common, transitions } from "./styles";
 
-injectGlobal`${fonts} ${common} ${transitions}`;
+injectGlobal`${common} ${transitions}`;
 
 ReactDOM.render(
   <Provider store={store}>
