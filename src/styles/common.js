@@ -10,7 +10,7 @@ const common = css`
     font-size: 62.5%;
     overflow-y: hidden;
     background-color: #eb6369;
-    @media screen and (max-width: 450px) {
+    @media (max-width: 450px) {
         font-size: 58%;
     }
   }

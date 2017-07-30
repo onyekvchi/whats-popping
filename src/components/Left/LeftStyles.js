@@ -19,7 +19,7 @@ const LeftTitle = styled.h1`
   font-size: 5rem;
   font-family: "TiemposWeb";
   line-height: 1.2;
-  @media screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     font-size: 3rem;
   }
 `;

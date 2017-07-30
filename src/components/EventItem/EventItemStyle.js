@@ -3,8 +3,8 @@ import styled from "styled-components";
 const EventItemStyle = styled.div`
   margin-bottom: 64px;
   display: block;
-  @media screen and (max-width: 450px) {
-    margin-bottom: 60px;
+  @media (max-width: 450px) {
+    margin-bottom: 54px;
   }
 `;
 
@@ -12,7 +12,7 @@ const EventItemTitle = styled.h1`
   font-family: "TiemposWeb";
   font-size: 3rem;
   line-height: 1.4;
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     font-size: 2.4rem;
     line-height: 1.25;
   }

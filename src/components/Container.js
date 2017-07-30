@@ -6,15 +6,15 @@ const Container = styled.div`
   padding: ${props => props.size === "sm" && "0 45px"};
   margin: ${props => (props.float === "left" ? "0 auto 0 45px" : "0 auto")};
 
-  @media screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     margin: 0 auto;
   }
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 0 30px;
     margin: ${props => props.float === "left" && "0 auto"};
   }
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     padding: 0 20px;
   }
 `;

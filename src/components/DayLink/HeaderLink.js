@@ -27,7 +27,7 @@ const HeaderLink = styled.a`
   &:last-child {
     margin-right: 0;
   }
-  @media screen and (max-width: 450px) {
+  @media (max-width: 450px) {
     margin-right: 20px;
   }
 `;

@@ -29,7 +29,7 @@ const Side = styled.div`
       background-size: cover;
       background-image: url('https://preview.ibb.co/cKPtH5/WHATSPOPPING_PATTERN_1.png');
     }
-    @media screen and(max-width: 768px) {
+    @media (max-width: 768px) {
       display: none;
     }
   `};
@@ -40,7 +40,7 @@ const Side = styled.div`
     width: 61.803398875%;
     background-color: white;
     overflow-x: hidden;
-    @media screen and(max-width: 768px) {
+    @media (max-width: 768px) {
       width: 100%;
     }
   `};
