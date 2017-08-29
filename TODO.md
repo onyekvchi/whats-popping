@@ -1,6 +1,6 @@
 # TODO
 
-### 1
+### Kachi
 - ~~API for events~~
 - ~~Redux Middleware to respond to API~~
 - ~~Organize folder structure~~
@@ -9,8 +9,12 @@
 - ~~sort out entry from event URL~~
 - ~~Responsiveness~~
 - Fix sidebar on mobile
-- Admin Section
+- Admin Section UI
 
+### Raymond
+- Add endpoint to post events
+- Add slugs to events when posting
+- Add auth endpoint 
 
 ### 2
 
