@@ -1,4 +1,4 @@
-function activeDate(state = null, action) {
+function activeDate(state = '', action) {
 	switch (action.type) {
 		case "SET_ACTIVE_DATE":
 			return action.payload;

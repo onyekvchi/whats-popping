@@ -11,6 +11,10 @@ const API = {
     return API.get("events");
   },
 
+  getEvent(eventId) {
+    return API.get("event/" + eventId);
+  },
+
   getLatestEvents() {
     return API.get("events/latest");
   }

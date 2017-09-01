@@ -5,7 +5,7 @@ import { ConnectedRouter } from "react-router-redux";
 import { injectGlobal, ThemeProvider } from "styled-components";
 import store, { history } from "./store";
 import registerServiceWorker from "./registerServiceWorker";
-import App from "./containers/App";
+import App from "./modules/index";
 import { common, transitions } from "./styles";
 import patterns from "./patterns";
 
