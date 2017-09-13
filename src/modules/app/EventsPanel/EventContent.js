@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import FadeIn from "../../styles/FadeIn";
+import FadeIn from "../../shared/FadeIn";
 import CostIcon from "./icons/Cost";
 import LocationIcon from "./icons/Location";
 import DateIcon from "./icons/Date";

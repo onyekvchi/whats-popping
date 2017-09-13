@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
-import Container from "./../../styles/Container";
+import Container from "./../../shared/Container";
 
 import EventsListItem from "./EventsListItem";
 import EventsListShimmer from "./EventsListShimmer";

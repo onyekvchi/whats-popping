@@ -5,7 +5,7 @@ import { ConnectedRouter } from "react-router-redux";
 import { injectGlobal, ThemeProvider } from "styled-components";
 import store, { history } from "./store";
 import registerServiceWorker from "./registerServiceWorker";
-import App from "./modules/index";
+import Main from "./modules/Main";
 import { common, transitions } from "./styles";
 import patterns from "./patterns";
 
@@ -34,7 +34,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <ConnectedRouter history={history}>
-        <App />
+        <Main />
       </ConnectedRouter>
     </ThemeProvider>
   </Provider>,

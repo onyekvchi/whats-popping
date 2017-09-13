@@ -1,7 +1,7 @@
 import React from "react";
 import PropType from "prop-types";
 
-import Container from "./../../styles/Container";
+import Container from "./../../shared/Container";
 import { EventsHeaderStyle, EventsHeaderLinkWrapper } from "./EventsHeader.style";
 import EventsHeaderLink from "./EventsHeaderLink";
 

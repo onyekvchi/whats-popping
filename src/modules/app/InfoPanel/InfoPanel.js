@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./../../styles/Container";
-import FadeIn from "./../../styles/FadeIn";
-import Side from "./../../styles/Side";
+import Container from "./../../shared/Container";
+import FadeIn from "./../../shared/FadeIn";
+import Side from "./../../shared/Side";
 import { Title, Wrap, Divider, Copy } from "./InfoPanel.style.js";
 
 const InfoPanel = () => {

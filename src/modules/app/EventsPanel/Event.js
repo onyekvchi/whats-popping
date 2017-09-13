@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Container from "../../styles/Container";
-import FadeIn from "../../styles/FadeIn";
+import Container from "../../shared/Container";
+import FadeIn from "../../shared/FadeIn";
 import EventContent from "./EventContent";
 import EventShimmer from "./EventShimmer";
 import EventStyle from "./Event.style";
 import BackIcon from "./icons/Back";
-import API from "./../../../api";
+import { API } from "./../../../utils";
 
 class Event extends Component {
   state = {

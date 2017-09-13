@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import Events from "./Events";
 import Event from "./Event";
 
-import Side from "./../../styles/Side";
+import Side from "./../../shared/Side";
 import * as actionCreators from "./../../../actions/actionCreator";
 import store from "./../../../store";
 

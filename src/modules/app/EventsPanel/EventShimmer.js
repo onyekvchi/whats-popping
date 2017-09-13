@@ -1,5 +1,5 @@
 import React from "react";
-import { Shimmer, ShimmerBackground, ShimmerMask } from "../../styles/Shimmer";
+import { Shimmer, ShimmerBackground, ShimmerMask } from "../../shared/Shimmer";
 
 const EventShimmer = ({ event }) => {
   const height = 32;
