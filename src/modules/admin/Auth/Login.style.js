@@ -5,7 +5,7 @@ export const LoginTitle = styled.h1`
   font-size: 2.4rem;
   font-family: "TiemposWeb";
   margin-bottom: 30px;
-  margin-top: 120px;
+  margin-top: 45px;
 `;
 
 export const Input = styled.input`

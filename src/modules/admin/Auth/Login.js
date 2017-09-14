@@ -3,7 +3,7 @@ import Container from "./../../shared/Container";
 import { Input, Button, LoginTitle, Error } from "./Login.style";
 import Page from "../../shared/Page";
 import { API, Auth } from "../../../utils";
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -22,10 +22,9 @@ class Login extends Component {
     API.login(this.state.form)
       .then(response => {
         Auth.authenticateAdmin();
-        this.props.history.push('/vip/events');
+        this.props.history.push("/vip/events");
       })
-      .catch(response => this.setState({ error: true }))
-      .then(() => this.setState({ loading: false }));
+      .catch(response => this.setState({ error: true, loading: false }));
   };
 
   handleChange = e => {
@@ -38,33 +37,39 @@ class Login extends Component {
   };
 
   render() {
-    return (
-      <Page>
-        <Container size="sm">
-          <LoginTitle>Welcome back!</LoginTitle>
-          <form onSubmit={this.handleSubmit}>
-            <Error>{this.state.error && "Login Failed."}</Error>
-            <Input
-              name="email"
-              autofocus={true}
-              type="text"
-              placeholder="Email Address"
-              onChange={this.handleChange}
-            />
-            <Input
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={this.handleChange}
-            />
-            <Button disabled={this.state.loading}>
-              {this.state.loading ? "Loading..." : "Login"}
-            </Button>
-          </form>
-        </Container>
-      </Page>
+    return Auth.isAdminLoggedIn() ? (
+      <Redirect to="/vip/events" />
+    ) : (
+      this.renderPage()
     );
   }
+
+  renderPage = () => (
+    <Page>
+      <Container size="sm">
+        <LoginTitle>Welcome back!</LoginTitle>
+        <form onSubmit={this.handleSubmit}>
+          <Error>{this.state.error && "Login Failed."}</Error>
+          <Input
+            name="email"
+            autofocus={true}
+            type="text"
+            placeholder="Email Address"
+            onChange={this.handleChange}
+          />
+          <Input
+            name="password"
+            type="password"
+            placeholder="Password"
+            onChange={this.handleChange}
+          />
+          <Button disabled={this.state.loading}>
+            {this.state.loading ? "Loading..." : "Login"}
+          </Button>
+        </form>
+      </Container>
+    </Page>
+  );
 }
 
 export default withRouter(Login);

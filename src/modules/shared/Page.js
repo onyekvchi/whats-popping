@@ -5,6 +5,7 @@ const Page = styled.div`
   width: 100%;
   background-color: #f5f5f5;
   overflow: scroll;
+  padding-top: 75px;
 `;
 
 export default Page;
