@@ -6,8 +6,10 @@ import Table, { Th, Tr, Td } from "../../shared/Table";
 import { withRouter } from "react-router-dom";
 import { API } from "../../../utils";
 import moment from "moment";
+import Blink from "../../shared/Blink";
 
 const textStyle = { margin: "90px 0", textAlign: "center" };
+
 class EventsList extends Component {
   state = {
     events: [],
@@ -37,7 +39,9 @@ class EventsList extends Component {
         <Button onClick={this.addEvent}>Add Event</Button>
         <Card>
           {this.state.loading ? (
-            <div style={textStyle}>Loading...</div>
+            <div style={textStyle}>
+              <Blink>Loading...</Blink>
+            </div>
           ) : this.state.error ? (
             <div style={textStyle}>
               There was an error loading the events :(

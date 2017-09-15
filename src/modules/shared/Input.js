@@ -12,6 +12,7 @@ const Input = styled.input`
   transition: all 200ms;
   margin-bottom: 15px;
   font-family: "Futura";
+  font-weight: normal;
   ${props =>
     props.error &&
     css`

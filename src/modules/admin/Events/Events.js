@@ -4,6 +4,7 @@ import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import Header from "../../shared/Header";
 import EventsList from "./EventsList";
 import SingleEvent from "./SingleEvent";
+import NewEvent from "./NewEvent";
 import Flex from "../../shared/Flex";
 import { Auth } from "../../../utils";
 import styled from "styled-components";
@@ -36,6 +37,7 @@ class Events extends Component {
           </Container>
         </Header>
         <Switch>
+          <Route path="/vip/events/new" exact component={NewEvent} />
           <Route path="/vip/events/:id" exact component={SingleEvent} />
           <Route path="/vip/events" component={EventsList} />
         </Switch>

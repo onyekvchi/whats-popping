@@ -4,34 +4,92 @@ import Card from "../../shared/Card";
 import styled from "styled-components";
 import Input from "../../shared/Input";
 import TextArea from "../../shared/TextArea";
+import { withRouter } from "react-router-dom";
+import { API } from "../../../utils";
+import Blink from '../../shared/Blink';
 
-export default class SingleEvent extends Component {
+const textStyle = { margin: "90px 0", textAlign: "center" };
+
+class SingleEvent extends Component {
+  state = {
+    loading: true,
+    error: false,
+    event: {}
+  };
+
+  componentDidMount = () => {
+    API.getEvent(this.props.match.params.id)
+      .then(response => this.setState({ event: response.data, loading: false }))
+      .catch(error => this.setState({ loading: false, error: true }));
+  };
+
+  handleChange = e => {
+    this.setState({
+      event: {
+        ...this.state.event,
+        [e.target.name]: e.target.value
+      }
+    })
+  };
+
+  handleSubmit = e => {
+    // Do call to update POST via API here
+  };
+
   render() {
+    const event = this.state.event;
     return (
       <Container>
         <Card>
-          <Form>
-            <Input placeholder="Title" />
-            <Input placeholder="Location" />
-            <TextArea placeholder="Description" name="description" rows="4" />
-            <Input placeholder="Date (YYYYMMDD)" />
-            <Input placeholder="Start time (e.g. 8pm)" />
-            <Input placeholder="End time (e.g. 12pm)" />
-            <Input placeholder="Price (in naira) or Free" />
-            <Input placeholder="Link to event image" />
-            <Input placeholder="Link to event website" />
-            <Button>Submit</Button>
-          </Form>
-          <div style={{ textAlign: "center", marginBottom: "30px", fontSize: "14px" }}>
-            <a href="#" style={{color: "#007ACC"}}>
-              Preview this event
-            </a>
-          </div>
+          {this.state.loading ? (
+            <div style={textStyle}>
+              <Blink>Loading...</Blink>
+            </div>
+          ) : this.state.error ? (
+            <div style={textStyle}>There was an error loading the event :(</div>
+          ) : (
+            this.renderForm(this.state.event)
+          )}
         </Card>
       </Container>
     );
   }
+
+  renderForm = event => (
+    <div>
+      <Form onSubmit={this.handleSubmit}>
+        <Input name="title" value={event.title} placeholder="Title" />
+        <Input name="location" value={event.location} placeholder="Location" />
+        <TextArea
+          value={event.description}
+          placeholder="Description"
+          name="description"
+          rows="6"
+        />
+        <Input name="date" value={event.date} placeholder="Date (YYYYMMDD)" />
+        <Input name="startTime" value={event.startTime} placeholder="Start time (e.g. 8pm)" />
+        <Input name="endTime" value={event.endTime} placeholder="End time (e.g. 12pm)" />
+        <Input name="price" value={event.price} placeholder="Price (in naira) or Free" />
+        <Input name="image" value="" placeholder="Link to event image" />
+        <Input name="link" value="" placeholder="Link to event website" />
+        <Button>Update</Button>
+      </Form>
+      {/* <div
+        style={{
+          textAlign: "center",
+          marginBottom: "30px",
+          fontSize: "14px"
+        }}
+      >
+        <a href="#" style={{ color: "#007ACC" }}>
+          Preview this event
+        </a>
+      </div> */}
+    </div>
+  );
 }
+
+export default withRouter(SingleEvent);
 
 const Form = styled.form`
   width: 450px;
