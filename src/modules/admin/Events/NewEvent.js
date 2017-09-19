@@ -24,7 +24,15 @@ class NewEvent extends Component {
   };
 
   handleSubmit = e => {
-    // Do call to update POST via API here
+    e.preventDefault();
+    this.setState({ loading: true });
+    API.postEvent(this.state.event)
+      .then(response => {
+        this.props.history.push(`/vip/events/${response.data.id}`);
+      })
+      .catch(error => {
+        this.setState({ loading: false, error: true });
+      });
   };
 
   render() {
@@ -39,16 +47,57 @@ class NewEvent extends Component {
   renderForm = event => (
     <div>
       <Form onSubmit={this.handleSubmit}>
-        <Input name="title" placeholder="Title" />
-        <Input name="location" placeholder="Location" />
-        <TextArea placeholder="Description" name="description" rows="6" />
-        <Input name="date" placeholder="Date (YYYYMMDD)" />
-        <Input name="startTime" placeholder="Start time (e.g. 8pm)" />
-        <Input name="endTime" placeholder="End time (e.g. 12pm)" />
-        <Input name="price" placeholder="Price (in naira) or Free" />
-        <Input name="image" placeholder="Link to event image" />
-        <Input name="link" placeholder="Link to event website" />
-        <Button disabled={this.state.loading}>Create</Button>
+        <Input
+          name="title"
+          placeholder="Title"
+          onChange={this.handleChange}
+          required={true}
+        />
+        <Input
+          name="location"
+          placeholder="Location"
+          onChange={this.handleChange}
+          required={true}
+        />
+        <TextArea
+          placeholder="Description"
+          name="description"
+          rows="6"
+          onChange={this.handleChange}
+        />
+        <Input
+          name="date"
+          placeholder="Date (YYYYMMDD)"
+          onChange={this.handleChange}
+        />
+        <Input
+          name="startTime"
+          placeholder="Start time (e.g. 8pm)"
+          onChange={this.handleChange}
+        />
+        <Input
+          name="endTime"
+          placeholder="End time (e.g. 12pm)"
+          onChange={this.handleChange}
+        />
+        <Input
+          name="price"
+          placeholder="Price (in naira) or Free"
+          onChange={this.handleChange}
+        />
+        <Input
+          name="image"
+          placeholder="Link to event image"
+          onChange={this.handleChange}
+        />
+        <Input
+          name="link"
+          placeholder="Link to event website"
+          onChange={this.handleChange}
+        />
+        <Button disabled={this.state.loading}>
+          {this.state.loading ? "Loading..." : "Create"}
+        </Button>
       </Form>
     </div>
   );
@@ -78,4 +127,8 @@ const Button = styled.button`
   background: #007acc;
   background: #121212;
   color: white;
+  transition: all 300ms;
+  &:disabled {
+    opacity: 0.4;
+  }
 `;

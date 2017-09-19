@@ -9,12 +9,12 @@
 - ~~sort out entry from event URL~~
 - ~~Responsiveness~~
 - Fix sidebar on mobile
-- Admin Section UI
+- ~~Admin Section UI~~
 
 ### Raymond
 - Add endpoint to post events
 - Add slugs to events when posting
-- Add auth endpoint 
+- ~~Add auth endpoint~~
 
 ### 2
 

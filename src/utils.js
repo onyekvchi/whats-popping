@@ -24,6 +24,10 @@ export const API = {
     return API.get("events/latest");
   },
 
+  postEvent(event) {
+    return API.post('events', event);
+  },
+
   login(payload) {
     return API.post("auth", payload);
   }
