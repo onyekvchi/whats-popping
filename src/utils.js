@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const API = {
-  BASE_URL: "https://whatspopping.glitch.me/",
-  // BASE_URL: "http://localhost:8000",
+  // BASE_URL: "https://whatspopping.glitch.me/",
+  BASE_URL: "http://localhost:3001",
 
   get(url) {
     return axios.get(`${API.BASE_URL}${url}`);
