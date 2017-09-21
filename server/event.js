@@ -7,9 +7,10 @@ let Event = new Schema({
     location: Schema.Types.String,
     description: Schema.Types.String,
     date: { type: Schema.Types.Date, default: Date.now() },
-    endTime: { type: Schema.Types.Date, default: Date.now() },
+    startTime: { type: Schema.Types.String, required: true },
+    endTime: Schema.Types.String,
     createdAt: { type: Schema.Types.Date, default: Date.now() },
-    updatedAt: { type: Schema.Types.Date, default: Date.now() },
+    updatedAt: { type: Schema.Types.Date, default: Date.now() }
 });
 
 module.exports = mongoose.model('Event', Event);

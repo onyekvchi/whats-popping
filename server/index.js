@@ -16,8 +16,6 @@ app.listen(3001);
 app.use(bodyParser.json({ type: "application/json" }));
 app.use(cors());
 
-var db;
-
 app.get("/events", function (r, s) {
 	console.log("stuff");
 	Event.find()
@@ -85,6 +83,22 @@ app.post("/events", function (r, s) {
 		.catch(err => {
 			return s.json({ status: "failed", err: err });
 		});
+});
+
+app.get("/event/:id", function (req, res) {
+	Event.findOne({ _id: req.params.id }, function (err, event) {
+		res.send(event)
+	})
+});
+
+app.post("/auth", function (req, res) {
+	console.log(req.body);
+
+	if (req.body.email === "alibaba" && req.body.password === "opensesame") {
+		res.status(200).send("Logged in successfully");
+	} else {
+		res.status(400).send("Login failed")
+	}
 });
 
 const getDaysFromEvents = events => {
