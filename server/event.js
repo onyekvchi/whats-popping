@@ -6,7 +6,7 @@ let Event = new Schema({
     price: { type: Schema.Types.Number, default: 0 },
     location: Schema.Types.String,
     description: Schema.Types.String,
-    startDate: { type: Schema.Types.Date, default: Date.now() },
+    date: { type: Schema.Types.Date, default: Date.now() },
     endTime: { type: Schema.Types.Date, default: Date.now() },
     createdAt: { type: Schema.Types.Date, default: Date.now() },
     updatedAt: { type: Schema.Types.Date, default: Date.now() },
