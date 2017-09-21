@@ -58,20 +58,21 @@ class SingleEvent extends Component {
   renderForm = event => (
     <div>
       <Form onSubmit={this.handleSubmit}>
-        <Input name="title" value={event.title} placeholder="Title" />
-        <Input name="location" value={event.location} placeholder="Location" />
+        <Input name="title" value={event.title} onChange={this.handleChange} placeholder="Title" />
+        <Input name="location" value={event.location} onChange={this.handleChange} placeholder="Location" />
         <TextArea
           value={event.description}
           placeholder="Description"
           name="description"
           rows="6"
+          onChange={this.handleChange}
         />
-        <Input name="date" value={event.date} placeholder="Date (YYYYMMDD)" />
-        <Input name="startTime" value={event.startTime} placeholder="Start time (e.g. 8pm)" />
-        <Input name="endTime" value={event.endTime} placeholder="End time (e.g. 12pm)" />
-        <Input name="price" value={event.price} placeholder="Price (in naira) or Free" />
-        <Input name="image" value="" placeholder="Link to event image" />
-        <Input name="link" value="" placeholder="Link to event website" />
+        <Input name="date" value={event.date} onChange={this.handleChange} placeholder="Date (YYYYMMDD)" />
+        <Input name="startTime" value={event.startTime} onChange={this.handleChange} placeholder="Start time (e.g. 8pm)" />
+        <Input name="endTime" value={event.endTime} onChange={this.handleChange} placeholder="End time (e.g. 12pm)" />
+        <Input name="price" value={event.price} onChange={this.handleChange} placeholder="Price (in naira) or Free" />
+        <Input name="image" value="" onChange={this.handleChange} placeholder="Link to event image" />
+        <Input name="link" value="" onChange={this.handleChange} placeholder="Link to event website" />
         <Button>Update</Button>
       </Form>
       {/* <div
