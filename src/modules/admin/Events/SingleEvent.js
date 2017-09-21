@@ -7,6 +7,7 @@ import TextArea from "../../shared/TextArea";
 import { withRouter } from "react-router-dom";
 import { API } from "../../../utils";
 import Blink from '../../shared/Blink';
+import moment from "moment";
 
 const textStyle = { margin: "90px 0", textAlign: "center" };
 
@@ -67,12 +68,12 @@ class SingleEvent extends Component {
           rows="6"
           onChange={this.handleChange}
         />
-        <Input name="date" value={event.date} onChange={this.handleChange} placeholder="Date (YYYYMMDD)" />
+        <Input name="date" type="date" value={moment(event.date).format('YYYY-MM-DD')} onChange={this.handleChange} placeholder="Date (YYYYMMDD)" />
         <Input name="startTime" value={event.startTime} onChange={this.handleChange} placeholder="Start time (e.g. 8pm)" />
         <Input name="endTime" value={event.endTime} onChange={this.handleChange} placeholder="End time (e.g. 12pm)" />
         <Input name="price" value={event.price} onChange={this.handleChange} placeholder="Price (in naira) or Free" />
-        <Input name="image" value="" onChange={this.handleChange} placeholder="Link to event image" />
-        <Input name="link" value="" onChange={this.handleChange} placeholder="Link to event website" />
+        <Input name="image" value={event.image} onChange={this.handleChange} placeholder="Link to event image" />
+        <Input name="link" value={event.link} onChange={this.handleChange} placeholder="Link to event website" />
         <Button>Update</Button>
       </Form>
       {/* <div
