@@ -20,7 +20,6 @@ app.get("/events", function (r, s) {
 	console.log("stuff");
 	Event.find()
 		.then(events => {
-			// return s.json({ status: "success", data: events });
 			return s.json({
 				days: getDaysFromEvents(events),
 				events
@@ -61,7 +60,6 @@ app.get("/events/latest", function (req, res) {
  * @param {Number} price
  * @param {Date} startDate
  * @param {Date} endDate
- * 
  */
 app.post("/events", function (r, s) {
 	if (
@@ -85,6 +83,28 @@ app.post("/events", function (r, s) {
 		});
 });
 
+/**
+ * @method PUT /events
+ * @description Modifies the value of an event
+ * @param {String} _id event id
+ * @param {Object} update
+ * @param {String} title
+ * @param {String} location
+ * @param {String} description
+ * @param {Number} price
+ * @param {Date} startDate
+ * @param {Date} endDate
+ */
+app.put('/events', (r, s) => {
+	Event.update({ _id: r.body._id }, r.body.update)
+		.then(event => {
+			return s.json({ status: "success", data: event });
+		})
+		.catch(err => {
+			return s.json({ status: "failed", err: err });
+		});
+})
+
 app.get("/event/:id", function (req, res) {
 	Event.findOne({ _id: req.params.id }, function (err, event) {
 		res.send(event)
@@ -92,8 +112,6 @@ app.get("/event/:id", function (req, res) {
 });
 
 app.post("/auth", function (req, res) {
-	console.log(req.body);
-
 	if (req.body.email === "alibaba" && req.body.password === "opensesame") {
 		res.status(200).send("Logged in successfully");
 	} else {
@@ -103,9 +121,7 @@ app.post("/auth", function (req, res) {
 
 const getDaysFromEvents = events => {
 	return events
-		.map(event => event.date)
-		.filter((elem, pos, arr) => {
-			return arr.indexOf(elem) == pos;
-		})
+		.map(event => moment(event.date).format("YYYYMMDD"))
+		.filter((elem, pos, arr) =>  arr.indexOf(elem) === pos)
 		.sort();
 };
