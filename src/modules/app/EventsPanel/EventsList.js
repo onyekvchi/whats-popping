@@ -7,9 +7,10 @@ import Container from "./../../shared/Container";
 import EventsListItem from "./EventsListItem";
 import EventsListShimmer from "./EventsListShimmer";
 import EventsListStyle from "./EventsList.style";
+import moment from "moment";
 
 const EventsList = ({ activeDate, events }) => {
-  const filteredEvents = events.filter(event => event.date === activeDate);
+  const filteredEvents = events.filter(event => moment(event.date).format("YYYYMMDD") === activeDate);
   const items = filteredEvents.map(event => (
     <EventsListItem {...event} key={event._id} />
   ));
