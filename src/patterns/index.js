@@ -5,4 +5,4 @@ import four from "./4.svg";
 import five from "./5.svg";
 import six from "./6.svg";
 
-export default [one, two, three, four, five, six];
+export default [one, two, four];

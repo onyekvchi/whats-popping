@@ -5,7 +5,7 @@ const sidewaysAnimation = keyframes`
     transform: translateX(0)
   }
   50% {
-    transform: translateX(-50%);
+    transform: translateX(-15%);
   }
 `;
 
@@ -34,13 +34,15 @@ const Side = styled.div`
       left: 0;
       top: 0;
       height: 100%;
-      width: 200%;
+      width: 120%;
       opacity: 1;
       z-index: -1;
-      background-repeat: repeat;
+      background-repeat: no-repeat;
+      background-size: cover;
       background-image: url('${props => props.theme.pattern}');
+      background-position: center;
       animation-name: ${sidewaysAnimation};
-      animation-duration: 200s;
+      animation-duration: 75s;
       animation-iteration-count: infinite;
       animation-timing-function: linear; 
     }
