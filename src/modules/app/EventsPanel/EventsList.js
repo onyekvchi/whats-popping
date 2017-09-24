@@ -9,8 +9,10 @@ import EventsListShimmer from "./EventsListShimmer";
 import EventsListStyle from "./EventsList.style";
 import moment from "moment";
 
-const EventsList = ({ activeDate, events }) => {
-  const filteredEvents = events.filter(event => moment(event.date).format("YYYYMMDD") === activeDate);
+const EventsList = ({ activeDate, events, loading, error }) => {
+  const filteredEvents = events.filter(
+    event => moment(event.date).format("YYYYMMDD") === activeDate
+  );
   const items = filteredEvents.map(event => (
     <EventsListItem {...event} key={event._id} />
   ));
@@ -18,7 +20,13 @@ const EventsList = ({ activeDate, events }) => {
   return (
     <EventsListStyle>
       <Container size="sm" float="left">
-        {events.length > 0 ? (
+        {error ? (
+          "There was an error loading the events"
+        ) : loading ? (
+          <EventsListShimmer />
+        ) : events.length === 0 ? (
+          "Looks like there are no events yet"
+        ) : (
           <ReactCSSTransitionGroup
             transitionName="fade"
             transitionEnterTimeout={500}
@@ -26,8 +34,6 @@ const EventsList = ({ activeDate, events }) => {
           >
             {items}
           </ReactCSSTransitionGroup>
-        ) : (
-          <EventsListShimmer />
         )}
       </Container>
     </EventsListStyle>
@@ -35,8 +41,10 @@ const EventsList = ({ activeDate, events }) => {
 };
 
 EventsList.propTypes = {
-  activeDate: PropTypes.number,
-  events: PropTypes.array.isRequired
+  activeDate: PropTypes.string,
+  events: PropTypes.array.isRequired,
+  error: PropTypes.bool,
+  loading: PropTypes.bool
 };
 
 export default EventsList;

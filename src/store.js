@@ -9,11 +9,7 @@ export const history = createHistory();
 
 const sagaMiddleware = createSagaMiddleware();
 
-const defaultState = {
-  activeDate: null,
-  days: [],
-  events: []
-};
+const defaultState = {};
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

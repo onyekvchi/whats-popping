@@ -15,7 +15,7 @@ import store from "./../../../store";
 
 class EventsPanel extends Component {
   componentWillMount() {
-    store.dispatch({ type: "EVENTS_FETCH_REQUESTED" });
+    this.props.loadEvents();
   }
 
   render() {
@@ -44,13 +44,15 @@ class EventsPanel extends Component {
   }
 }
 
-const renderEvents = ({ days, events, activeDate, setActiveDate }) => {
+const renderEvents = ({ days, events, activeDate, setActiveDate, loading, error }) => {
   return (
     <Events
       days={days}
       events={events}
       activeDate={activeDate}
       setActiveDate={setActiveDate}
+      loading={loading}
+      error={error}
     />
   );
 };
@@ -66,7 +68,9 @@ function mapStateToProps(state) {
   return {
     events: state.events,
     days: state.days,
-    activeDate: state.activeDate
+    activeDate: state.activeDate,
+    loading: state.loading,
+    error: state.error
   };
 }
 

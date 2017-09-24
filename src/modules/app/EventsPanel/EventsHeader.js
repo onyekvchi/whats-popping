@@ -27,7 +27,7 @@ const EventsHeader = ({ activeDate, days, setActiveDate }) => {
 };
 
 EventsHeader.propTypes = {
-  activeDate: PropType.number,
+  activeDate: PropType.string,
   days: PropType.array.isRequired,
   setActiveDate: PropType.func.isRequired
 };
