@@ -15,7 +15,7 @@ const EventsHeaderLink = ({ active, day, onClick }) => {
 
 EventsHeaderLink.propTypes = {
     active: PropTypes.bool.isRequired,
-    day: PropTypes.number.isRequired,
+    day: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired 
 }
 

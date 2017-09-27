@@ -10,11 +10,14 @@
 - ~~Responsiveness~~
 - Fix sidebar on mobile
 - ~~Admin Section UI~~
+- Render event images if they exist
+- Add google analytics
+- Add notification module for backend
 
 ### Raymond
-- Add endpoint to post events
-- Add slugs to events when posting
+- ~~Add endpoint to post events~~
 - ~~Add auth endpoint~~
+- Add slugs to events when posting
 
 ### 2
 

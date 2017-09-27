@@ -52,7 +52,7 @@ EventsListItem.propTypes = {
   location: PropTypes.string,
   startTime: PropTypes.string,
   endTime: PropTypes.string,
-  price: PropTypes.string
+  price: PropTypes.number
 };
 
 export default EventsListItem;
