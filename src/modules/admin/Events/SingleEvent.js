@@ -37,8 +37,11 @@ class SingleEvent extends Component {
     e.preventDefault();
     this.setState({ loading: true });
     API.updateEvent(this.state.event)
-      .then(response => {
-        this.props.history.push(`/vip/events/${response.data.id}`);
+      .then(({ data }) => {
+        this.setState({
+          event: data.event,
+          loading: false
+        });
       })
       .catch(error => {
         this.setState({ loading: false, error: true });

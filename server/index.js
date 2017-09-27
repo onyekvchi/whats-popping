@@ -120,8 +120,8 @@ app.post("/events", function(request, response) {
 }
  * ```
  */
-app.put("/events", (request, response) => {
-  Event.update({ _id: request.body._id }, request.body.update)
+app.put("/event/:id", (request, response) => {
+  Event.update({ _id: request.params.id }, request.body)
     .then(event => {
       Event.findById(request.body._id).then(event =>
         response.json({
