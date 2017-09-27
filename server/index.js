@@ -19,20 +19,23 @@ app.use(cors());
 /**
  * @method GET /events
  */
-app.get("/events", function(r, s) {
+app.get("/events", function(request, response) {
   Event.find()
-    .then(events => {
-      return s.json({
+    .then(events =>
+      response.json({
         days: getDaysFromEvents(events),
         events
-      });
-    })
-    .catch(err => {
-      return s.json({ status: "failed", err: err });
-    });
+      })
+    )
+    .catch(error =>
+      response.json({
+        status: "failed",
+        error
+      })
+    );
 });
 
-app.get("/events/latest", function(req, res) {
+app.get("/events/latest", function(request, response) {
   var wednesday = 3,
     today = moment(),
     format = "YYYYMMDD",
@@ -63,26 +66,32 @@ app.get("/events/latest", function(req, res) {
  * @param {Date} startDate
  * @param {Date} endDate
  */
-app.post("/events", function(r, s) {
+app.post("/events", function(request, response) {
   if (
-    r.body.title == null &&
-    r.body.location == null &&
-    r.body.description == null &&
-    r.body.price == null
+    request.body.title == null &&
+    request.body.location == null &&
+    request.body.description == null &&
+    request.body.price == null
   ) {
-    return s.json({
+    return response.json({
       status: "failed",
-      err: "some body paramenters were not set"
+      error: "some body paramenters were not set"
     });
   }
 
-  Event.create(r.body)
-    .then(event => {
-      return s.json({ status: "success", event });
-    })
-    .catch(err => {
-      return s.json({ status: "failed", err: err });
-    });
+  Event.create(request.body)
+    .then(event =>
+      response.json({
+        status: "success",
+        event
+      })
+    )
+    .catch(error =>
+      response.json({
+        status: "failed",
+        error
+      })
+    );
 });
 
 /**
@@ -111,42 +120,47 @@ app.post("/events", function(r, s) {
 }
  * ```
  */
-app.put("/events", (r, s) => {
-  Event.update({ _id: r.body._id }, r.body.update)
+app.put("/events", (request, response) => {
+  Event.update({ _id: request.body._id }, request.body.update)
     .then(event => {
-      Event.findById(r.body._id)
-        .then(event => {
-          return s.json({ status: "success", data: event });
+      Event.findById(request.body._id).then(event =>
+        response.json({
+          status: "success",
+          event
         })
-        .catch(err => {
-          return s.json({ status: "failed", err: err });
-        });
+      );
     })
-    .catch(err => {
-      return s.json({ status: "failed", err: err });
-    });
+    .catch(error =>
+      response.json({
+        status: "failed",
+        error
+      })
+    );
 });
 
 /**
  * @method GET /event:id
  */
-app.get("/event/:id", function(req, res) {
-  Event.findOne({ _id: req.params.id }, function(err, event) {
-    res.send(event);
+app.get("/event/:id", function(request, response) {
+  Event.findOne({ _id: request.params.id }, function(error, event) {
+    response.send(event);
   });
 });
 
-app.post("/auth", function(req, res) {
-  if (req.body.email === "alibaba" && req.body.password === "opensesame") {
-    res.status(200).send("Logged in successfully");
+app.post("/auth", function(request, response) {
+  if (
+    request.body.email === "alibaba" &&
+    request.body.password === "opensesame"
+  ) {
+    response.status(200).send("Logged in successfully");
   } else {
-    res.status(400).send("Login failed");
+    response.status(400).send("Login failed");
   }
 });
 
 const getDaysFromEvents = events => {
   return events
     .map(event => moment(event.date).format("YYYYMMDD"))
-    .filter((elem, pos, arr) => arr.indexOf(elem) === pos)
+    .filter((element, position, array) => array.indexOf(element) === position)
     .sort();
 };
