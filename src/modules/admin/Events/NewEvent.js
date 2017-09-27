@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 import Container from "../../shared/Container";
 import Card from "../../shared/Card";
 import styled from "styled-components";
@@ -11,7 +12,18 @@ class NewEvent extends Component {
   state = {
     loading: false,
     error: false,
-    event: {}
+    event: {
+      title: "Kachi's event 2",
+      location: "Hs 10, A1 Close, 311 Road, Gowon Estate, Egbeda, Lagos",
+      description:
+        "It's really just an excuse to waste money, nothing too serious tbh",
+      date: "2017-09-29",
+      startTime: "12pm",
+      price: 0,
+      image:
+        "https://media.textadventures.co.uk/coverart/b69281d8-93b6-4c6a-a964-441dddfe8a9d.jpg",
+      link: ""
+    }
   };
 
   handleChange = e => {
@@ -27,8 +39,8 @@ class NewEvent extends Component {
     e.preventDefault();
     this.setState({ loading: true });
     API.postEvent(this.state.event)
-      .then(response => {
-        this.props.history.push(`/vip/events/${response.data.id}`);
+      .then(({ data }) => {
+        this.props.history.push(`/vip/events/${ data.event._id }`);
       })
       .catch(error => {
         this.setState({ loading: false, error: true });
@@ -39,27 +51,28 @@ class NewEvent extends Component {
     const event = this.state.event;
     return (
       <Container>
-        <Card>{this.renderForm(this.state.event)}</Card>
+        <Card>{this.renderForm(this.state)}</Card>
       </Container>
     );
   }
 
-  renderForm = event => (
+  renderForm = ({ event, loading }) => (
     <div>
       <Form onSubmit={this.handleSubmit}>
         <Input
           name="title"
-          placeholder="Title"
+          value={event.title}
           onChange={this.handleChange}
-          required={true}
+          placeholder="Title"
         />
         <Input
           name="location"
-          placeholder="Location"
+          value={event.location}
           onChange={this.handleChange}
-          required={true}
+          placeholder="Location"
         />
         <TextArea
+          value={event.description}
           placeholder="Description"
           name="description"
           rows="6"
@@ -67,37 +80,42 @@ class NewEvent extends Component {
         />
         <Input
           name="date"
-          placeholder="Date (YYYYMMDD)"
+          type="date"
+          value={moment(event.date).format("YYYY-MM-DD")}
           onChange={this.handleChange}
+          placeholder="Date (YYYYMMDD)"
         />
         <Input
           name="startTime"
-          placeholder="Start time (e.g. 8pm)"
+          value={event.startTime}
           onChange={this.handleChange}
+          placeholder="Start time (e.g. 8pm)"
         />
         <Input
           name="endTime"
-          placeholder="End time (e.g. 12pm)"
+          value={event.endTime}
           onChange={this.handleChange}
+          placeholder="End time (e.g. 12pm)"
         />
         <Input
           name="price"
-          placeholder="Price (in naira) or Free"
+          value={event.price}
           onChange={this.handleChange}
+          placeholder="Price (in naira) or Free"
         />
         <Input
           name="image"
-          placeholder="Link to event image"
+          value={event.image}
           onChange={this.handleChange}
+          placeholder="Link to event image"
         />
         <Input
           name="link"
-          placeholder="Link to event website"
+          value={event.link}
           onChange={this.handleChange}
+          placeholder="Link to event website"
         />
-        <Button disabled={this.state.loading}>
-          {this.state.loading ? "Loading..." : "Create"}
-        </Button>
+        <Button disabled={loading}>{loading ? "Loading..." : "Save"}</Button>
       </Form>
     </div>
   );

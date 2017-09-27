@@ -6,7 +6,7 @@ import Input from "../../shared/Input";
 import TextArea from "../../shared/TextArea";
 import { withRouter } from "react-router-dom";
 import { API } from "../../../utils";
-import Blink from '../../shared/Blink';
+import Blink from "../../shared/Blink";
 import moment from "moment";
 
 const textStyle = { margin: "90px 0", textAlign: "center" };
@@ -30,11 +30,19 @@ class SingleEvent extends Component {
         ...this.state.event,
         [e.target.name]: e.target.value
       }
-    })
+    });
   };
 
   handleSubmit = e => {
-    // Do call to update POST via API here
+    e.preventDefault();
+    this.setState({ loading: true });
+    API.updateEvent(this.state.event)
+      .then(response => {
+        this.props.history.push(`/vip/events/${response.data.id}`);
+      })
+      .catch(error => {
+        this.setState({ loading: false, error: true });
+      });
   };
 
   render() {
@@ -59,8 +67,18 @@ class SingleEvent extends Component {
   renderForm = event => (
     <div>
       <Form onSubmit={this.handleSubmit}>
-        <Input name="title" value={event.title} onChange={this.handleChange} placeholder="Title" />
-        <Input name="location" value={event.location} onChange={this.handleChange} placeholder="Location" />
+        <Input
+          name="title"
+          value={event.title}
+          onChange={this.handleChange}
+          placeholder="Title"
+        />
+        <Input
+          name="location"
+          value={event.location}
+          onChange={this.handleChange}
+          placeholder="Location"
+        />
         <TextArea
           value={event.description}
           placeholder="Description"
@@ -68,12 +86,43 @@ class SingleEvent extends Component {
           rows="6"
           onChange={this.handleChange}
         />
-        <Input name="date" type="date" value={moment(event.date).format('YYYY-MM-DD')} onChange={this.handleChange} placeholder="Date (YYYYMMDD)" />
-        <Input name="startTime" value={event.startTime} onChange={this.handleChange} placeholder="Start time (e.g. 8pm)" />
-        <Input name="endTime" value={event.endTime} onChange={this.handleChange} placeholder="End time (e.g. 12pm)" />
-        <Input name="price" value={event.price} onChange={this.handleChange} placeholder="Price (in naira) or Free" />
-        <Input name="image" value={event.image} onChange={this.handleChange} placeholder="Link to event image" />
-        <Input name="link" value={event.link} onChange={this.handleChange} placeholder="Link to event website" />
+        <Input
+          name="date"
+          type="date"
+          value={moment(event.date).format("YYYY-MM-DD")}
+          onChange={this.handleChange}
+          placeholder="Date (YYYYMMDD)"
+        />
+        <Input
+          name="startTime"
+          value={event.startTime}
+          onChange={this.handleChange}
+          placeholder="Start time (e.g. 8pm)"
+        />
+        <Input
+          name="endTime"
+          value={event.endTime}
+          onChange={this.handleChange}
+          placeholder="End time (e.g. 12pm)"
+        />
+        <Input
+          name="price"
+          value={event.price}
+          onChange={this.handleChange}
+          placeholder="Price (in naira) or Free"
+        />
+        <Input
+          name="image"
+          value={event.image}
+          onChange={this.handleChange}
+          placeholder="Link to event image"
+        />
+        <Input
+          name="link"
+          value={event.link}
+          onChange={this.handleChange}
+          placeholder="Link to event website"
+        />
         <Button>Update</Button>
       </Form>
       {/* <div

@@ -16,42 +16,41 @@ app.listen(3001);
 app.use(bodyParser.json({ type: "application/json" }));
 app.use(cors());
 
-
 /**
  * @method GET /events
  */
-app.get("/events", function (r, s) {
-	Event.find()
-		.then(events => {
-			return s.json({
-				days: getDaysFromEvents(events),
-				events
-			});
-		})
-		.catch(err => {
-			return s.json({ status: "failed", err: err });
-		});
+app.get("/events", function(r, s) {
+  Event.find()
+    .then(events => {
+      return s.json({
+        days: getDaysFromEvents(events),
+        events
+      });
+    })
+    .catch(err => {
+      return s.json({ status: "failed", err: err });
+    });
 });
 
-app.get("/events/latest", function (req, res) {
-	var wednesday = 3,
-		today = moment(),
-		format = "YYYYMMDD",
-		fromDate,
-		toDate,
-		isStale;
+app.get("/events/latest", function(req, res) {
+  var wednesday = 3,
+    today = moment(),
+    format = "YYYYMMDD",
+    fromDate,
+    toDate,
+    isStale;
 
-	if (today.weekday() < wednesday) {
-		fromDate = moment().weekday(wednesday - 7);
-		toDate = moment().weekday(wednesday - 1);
-	} else {
-		fromDate = moment().weekday(wednesday);
-		toDate = moment().weekday(wednesday + 6);
-	}
+  if (today.weekday() < wednesday) {
+    fromDate = moment().weekday(wednesday - 7);
+    toDate = moment().weekday(wednesday - 1);
+  } else {
+    fromDate = moment().weekday(wednesday);
+    toDate = moment().weekday(wednesday + 6);
+  }
 
-	fromDate = fromDate.format(format);
-	toDate = toDate.format(format);
-	isStale = today > toDate;
+  fromDate = fromDate.format(format);
+  toDate = toDate.format(format);
+  isStale = today > toDate;
 });
 
 /**
@@ -64,26 +63,26 @@ app.get("/events/latest", function (req, res) {
  * @param {Date} startDate
  * @param {Date} endDate
  */
-app.post("/events", function (r, s) {
-	if (
-		r.body.title == null &&
-		r.body.location == null &&
-		r.body.description == null &&
-		r.body.price == null
-	) {
-		return s.json({
-			status: "failed",
-			err: "some body paramenters were not set"
-		});
-	}
+app.post("/events", function(r, s) {
+  if (
+    r.body.title == null &&
+    r.body.location == null &&
+    r.body.description == null &&
+    r.body.price == null
+  ) {
+    return s.json({
+      status: "failed",
+      err: "some body paramenters were not set"
+    });
+  }
 
-	Event.create(r.body)
-		.then(event => {
-			return s.json({ status: "success", data: event });
-		})
-		.catch(err => {
-			return s.json({ status: "failed", err: err });
-		});
+  Event.create(r.body)
+    .then(event => {
+      return s.json({ status: "success", event });
+    })
+    .catch(err => {
+      return s.json({ status: "failed", err: err });
+    });
 });
 
 /**
@@ -112,42 +111,42 @@ app.post("/events", function (r, s) {
 }
  * ```
  */
-app.put('/events', (r, s) => {
-	Event.update({ _id: r.body._id }, r.body.update)
-		.then(event => {
-			Event.findById(r.body._id)
-				.then(event => {
-					return s.json({ status: "success", data: event });
-				})
-				.catch(err => {
-					return s.json({ status: "failed", err: err });
-				});
-		})
-		.catch(err => {
-			return s.json({ status: "failed", err: err });
-		});
-})
+app.put("/events", (r, s) => {
+  Event.update({ _id: r.body._id }, r.body.update)
+    .then(event => {
+      Event.findById(r.body._id)
+        .then(event => {
+          return s.json({ status: "success", data: event });
+        })
+        .catch(err => {
+          return s.json({ status: "failed", err: err });
+        });
+    })
+    .catch(err => {
+      return s.json({ status: "failed", err: err });
+    });
+});
 
 /**
  * @method GET /event:id
  */
-app.get("/event/:id", function (req, res) {
-	Event.findOne({ _id: req.params.id }, function (err, event) {
-		res.send(event)
-	})
+app.get("/event/:id", function(req, res) {
+  Event.findOne({ _id: req.params.id }, function(err, event) {
+    res.send(event);
+  });
 });
 
-app.post("/auth", function (req, res) {
-	if (req.body.email === "alibaba" && req.body.password === "opensesame") {
-		res.status(200).send("Logged in successfully");
-	} else {
-		res.status(400).send("Login failed")
-	}
+app.post("/auth", function(req, res) {
+  if (req.body.email === "alibaba" && req.body.password === "opensesame") {
+    res.status(200).send("Logged in successfully");
+  } else {
+    res.status(400).send("Login failed");
+  }
 });
 
 const getDaysFromEvents = events => {
-	return events
-		.map(event => moment(event.date).format("YYYYMMDD"))
-		.filter((elem, pos, arr) => arr.indexOf(elem) === pos)
-		.sort();
+  return events
+    .map(event => moment(event.date).format("YYYYMMDD"))
+    .filter((elem, pos, arr) => arr.indexOf(elem) === pos)
+    .sort();
 };

@@ -10,7 +10,9 @@ let Event = new Schema({
     startTime: { type: Schema.Types.String, required: true },
     endTime: Schema.Types.String,
     createdAt: { type: Schema.Types.Date, default: Date.now() },
-    updatedAt: { type: Schema.Types.Date, default: Date.now() }
+    updatedAt: { type: Schema.Types.Date, default: Date.now() },
+    image: { type: Schema.Types.String },
+    link: { type: Schema.Types.String },
 });
 
 module.exports = mongoose.model('Event', Event);

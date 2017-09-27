@@ -12,6 +12,10 @@ export const API = {
     return axios.post(`${API.BASE_URL}${url}`, payload);
   },
 
+  put(url, payload) {
+    return axios.put(`${API.BASE_URL}${url}`, payload);
+  },
+
   getEvents() {
     return API.get("events");
   },
@@ -26,6 +30,10 @@ export const API = {
 
   postEvent(event) {
     return API.post('events', event);
+  },
+
+  updateEvent(event) {
+      return API.put('event/' + event._id,  event);
   },
 
   login(payload) {
