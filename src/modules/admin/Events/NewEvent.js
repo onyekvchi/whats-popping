@@ -40,7 +40,8 @@ class NewEvent extends Component {
     this.setState({ loading: true });
     API.postEvent(this.state.event)
       .then(({ data }) => {
-        this.props.history.push(`/vip/events/${ data.event._id }`);
+        // this.props.history.push(`/vip/events/${ data.event._id }`);
+        this.props.history.push('/vip/events');
       })
       .catch(error => {
         this.setState({ loading: false, error: true });

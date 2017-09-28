@@ -1,7 +1,11 @@
-let mongoose = require('mongoose');
-let Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const slug = require('mongoose-slug-generator');
+mongoose.plugin(slug);
 
-let Event = new Schema({
+const Schema = mongoose.Schema;
+
+const Event = new Schema({
+    slug: { type: Schema.Types.String, slug: "title", unique: true },
     title: { type: Schema.Types.String, unique: true },
     price: { type: Schema.Types.Number, default: 0 },
     location: Schema.Types.String,

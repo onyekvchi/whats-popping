@@ -25,8 +25,8 @@ class EventsList extends Component {
       .catch(error => this.setState({ loading: false, error: true }));
   };
 
-  rowClick = id => {
-    this.props.history.push(`/vip/events/${id}`);
+  rowClick = slug => {
+    this.props.history.push(`/vip/events/${slug}`);
   };
 
   addEvent = () => {
@@ -66,7 +66,7 @@ class EventsList extends Component {
       </thead>
       <tbody>
         {this.state.events.map(event => (
-          <Tr key={event._id} onClick={() => this.rowClick(event._id)}>
+          <Tr key={event._id} onClick={() => this.rowClick(event.slug)}>
             <Td>{event.title}</Td>
             <Td>{formatPrice(event.price)}</Td>
             <Td>
