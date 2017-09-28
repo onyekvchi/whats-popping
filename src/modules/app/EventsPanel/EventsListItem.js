@@ -17,6 +17,7 @@ import { formatPrice } from '../../../utils';
 
 const EventsListItem = ({
   _id,
+  slug,
   title,
   location,
   startTime,
@@ -25,7 +26,7 @@ const EventsListItem = ({
 }) => {
   return (
     <EventsListItemStyle>
-      <Link to={`/event/${_id}`}>
+      <Link to={`/event/${slug}`}>
         <Title>{title}</Title>
       </Link>
       <Location>{location}</Location>
@@ -49,6 +50,7 @@ const EventsListItem = ({
 
 EventsListItem.propTypes = {
   _id: PropTypes.string,
+  slug: PropTypes.string,
   title: PropTypes.string,
   location: PropTypes.string,
   startTime: PropTypes.string,
