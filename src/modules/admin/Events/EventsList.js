@@ -4,7 +4,7 @@ import Container from "../../shared/Container";
 import Card from "../../shared/Card";
 import Table, { Th, Tr, Td } from "../../shared/Table";
 import { withRouter } from "react-router-dom";
-import { API, formatPrice } from '../../../utils';
+import { API, formatPrice } from "../../../utils";
 import moment from "moment";
 import Blink from "../../shared/Blink";
 

@@ -12,6 +12,13 @@ import Event from "./Event";
 import Side from "./../../shared/Side";
 import * as actionCreators from "./../../../actions/actionCreator";
 import store from "./../../../store";
+import SEO from "../../shared/SEO";
+
+const site = {
+  url: "http://whatspoppi.ng",
+  description: "All the events worth looking out for this weekend in Lagos.",
+  title: "What's Popping?"
+};
 
 class EventsPanel extends Component {
   componentWillMount() {
@@ -21,6 +28,7 @@ class EventsPanel extends Component {
   render() {
     return (
       <Side float="right">
+        <SEO title={site.title} description={site.description} url={site.url} />
         <Route
           render={({ location }) => (
             <CSSTransitionGroup
@@ -44,7 +52,14 @@ class EventsPanel extends Component {
   }
 }
 
-const renderEvents = ({ days, events, activeDate, setActiveDate, loading, error }) => {
+const renderEvents = ({
+  days,
+  events,
+  activeDate,
+  setActiveDate,
+  loading,
+  error
+}) => {
   return (
     <Events
       days={days}

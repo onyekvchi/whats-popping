@@ -17,7 +17,7 @@
 ### Raymond
 - ~~Add endpoint to post events~~
 - ~~Add auth endpoint~~
-- Add slugs to events when posting
+- ~~Add slugs to events when posting~~
 
 ### 2
 

@@ -10,6 +10,7 @@ import EventsListStyle from "./EventsList.style";
 import moment from "moment";
 
 const EventsList = ({ activeDate, events, loading, error }) => {
+
   const filteredEvents = events.filter(
     event => moment(event.date).format("YYYYMMDD") === activeDate
   );
