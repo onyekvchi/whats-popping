@@ -54,3 +54,7 @@ export const Auth = {
     return sessionStorage.getItem("adminLoggedIn");
   }
 };
+
+export const formatPrice = price => {
+  return price === 0 ? "Free" : `NGN ${price}`;
+}

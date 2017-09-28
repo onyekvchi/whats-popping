@@ -13,6 +13,7 @@ import {
   Divider,
   Description
 } from "./EventContent.style";
+import { formatPrice } from "../../../utils";
 
 const EventContent = ({ event }) => {
   return (
@@ -45,7 +46,7 @@ const EventContent = ({ event }) => {
         <Icon>
           <CostIcon />
         </Icon>
-        <div>{event.price}</div>
+        <div>{formatPrice(event.price)}</div>
       </Detail>
       <FadeIn>
         <Divider />

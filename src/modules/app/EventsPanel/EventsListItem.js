@@ -13,6 +13,7 @@ import {
   Icon,
   PriceWrap
 } from "./EventsListItem.style";
+import { formatPrice } from '../../../utils';
 
 const EventsListItem = ({
   _id,
@@ -39,7 +40,7 @@ const EventsListItem = ({
           <Icon>
             <CostIcon />
           </Icon>
-          <div>{price}</div>
+          <div>{formatPrice(price)}</div>
         </Detail>
       </PriceWrap>
     </EventsListItemStyle>
