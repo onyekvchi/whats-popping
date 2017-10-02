@@ -2,6 +2,10 @@
   "name": "whats-popping",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node":"6.10.2",
+    "npm":"3.10.10"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "history": "^4.6.3",
