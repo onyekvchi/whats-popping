@@ -85,8 +85,8 @@ app.post("/events", function(request, response) {
 });
 
 
-app.put("/event/:slug", (request, response) => {
-  Event.update({ slug: request.params.slug }, request.body)
+app.put("/event/:id", (request, response) => {
+  Event.update({ _id: request.params.id }, request.body)
     .then(event => {
       Event.findById(request.body._id).then(event =>
         response.json({

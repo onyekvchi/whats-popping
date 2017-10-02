@@ -38,6 +38,7 @@ class SingleEvent extends Component {
     this.setState({ loading: true });
     API.updateEvent(this.state.event)
       .then(({ data }) => {
+        console.log(data.event)
         this.setState({
           event: data.event,
           loading: false

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import EventsPanel from "./EventsPanel/EventsPanel";
 import InfoPanel from "./InfoPanel/InfoPanel";
-import AnalyticsTracker from "../shared/AnalyticsTracker";
 
 class App extends Component {
   render() {
