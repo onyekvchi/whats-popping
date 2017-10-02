@@ -8,6 +8,7 @@ import registerServiceWorker from "./registerServiceWorker";
 import Main from "./modules/Main";
 import { common, transitions } from "./styles";
 import patterns from "./patterns";
+import AnalyticsTracker from './modules/shared/AnalyticsTracker';
 
 const colors = [
   "#63EB85",
@@ -30,18 +31,14 @@ const theme = {
 
 injectGlobal`${common} ${transitions}`;
 
-history.listen((location) => {  
-  // if (window.ga) {
-  //   window.ga('send', 'pageview', location.pathname);
-  // }
-  console.log(location);
-});
-
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <ConnectedRouter history={history}>
-        <Main />
+        <div className="app">
+          <Main />
+          <AnalyticsTracker />
+        </div>
       </ConnectedRouter>
     </ThemeProvider>
   </Provider>,
