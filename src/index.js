@@ -30,6 +30,13 @@ const theme = {
 
 injectGlobal`${common} ${transitions}`;
 
+history.listen((location) => {  
+  // if (window.ga) {
+  //   window.ga('send', 'pageview', location.pathname);
+  // }
+  console.log(location);
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>

@@ -28,10 +28,9 @@ export const Tr = styled.tr`
     transition: background-color 300ms;
     border-radius: 3px;
     &:nth-child(even) {
-      background-color: #f8f8f8;
+      background-color: #fafafa;
     }
     &:hover {
-      background-color: #f0f0f0;
       cursor: pointer;
     }
   }

@@ -49,11 +49,23 @@ const Divider = styled.div`
 
 const Description = styled.div`line-height: 1.6;`;
 
+const Image = styled.img`
+  transition: all 300ms;
+  width: 100%;
+  height: auto;
+  border: none;
+  margin-top: 30px;
+  display: block;
+  color: #999;
+  text-align: center;
+`;
+
 export {
   Title,
   SubTitle,
   Detail,
   Icon,
   Divider,
-  Description
+  Description,
+  Image
 };

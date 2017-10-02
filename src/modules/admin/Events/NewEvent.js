@@ -49,7 +49,6 @@ class NewEvent extends Component {
   };
 
   render() {
-    const event = this.state.event;
     return (
       <Container>
         <Card>{this.renderForm(this.state)}</Card>

@@ -11,7 +11,8 @@ import {
   Detail,
   Icon,
   Divider,
-  Description
+  Description,
+  Image
 } from "./EventContent.style";
 import { formatPrice } from "../../../utils";
 
@@ -48,12 +49,11 @@ const EventContent = ({ event }) => {
         </Icon>
         <div>{formatPrice(event.price)}</div>
       </Detail>
+      <Divider />
+      <SubTitle>Our two cents</SubTitle>
+      <Description>{event.description}</Description>
       <FadeIn>
-        <Divider />
-      </FadeIn>
-      <FadeIn>
-        <SubTitle>Our two cents</SubTitle>
-        <Description>{event.description}</Description>
+        <Image src={event.image} alt={event.title + " image"} />
       </FadeIn>
     </FadeIn>
   );

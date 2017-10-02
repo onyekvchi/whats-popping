@@ -49,18 +49,18 @@ class SingleEvent extends Component {
   };
 
   render() {
-    const event = this.state.event;
+    const { event, loading, error } = this.state;
     return (
       <Container>
         <Card>
-          {this.state.loading ? (
+          {loading ? (
             <div style={textStyle}>
               <Blink>Loading...</Blink>
             </div>
-          ) : this.state.error ? (
+          ) : error ? (
             <div style={textStyle}>There was an error loading the event :(</div>
           ) : (
-            this.renderForm(this.state.event)
+            this.renderForm(event)
           )}
         </Card>
       </Container>

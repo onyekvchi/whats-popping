@@ -11,7 +11,6 @@ import Event from "./Event";
 
 import Side from "./../../shared/Side";
 import * as actionCreators from "./../../../actions/actionCreator";
-import store from "./../../../store";
 import SEO from "../../shared/SEO";
 
 const site = {
