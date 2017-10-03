@@ -3,15 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node":"6.10.2",
-    "npm":"3.10.10"
+    "node": "6.10.2",
+    "npm": "3.10.10"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "express": "^4.16.1",
     "history": "^4.6.3",
     "moment": "^2.18.1",
     "mongoose": "^4.11.12",
     "mongoose-slug-generator": "^1.0.4",
+    "nodemon": "^1.12.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
