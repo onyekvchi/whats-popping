@@ -10,8 +10,8 @@
 - ~~Responsiveness~~
 - Fix sidebar on mobile
 - ~~Admin Section UI~~
-- Render event images if they exist
-- Add google analytics
+- ~~Render event images if they exist~~
+- ~~Add google analytics~~
 - Add notification module for backend
 
 ### Raymond

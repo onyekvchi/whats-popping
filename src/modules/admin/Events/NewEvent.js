@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import moment from "moment";
 import Container from "../../shared/Container";
 import Card from "../../shared/Card";
 import styled from "styled-components";
@@ -11,19 +10,7 @@ import { API } from "../../../utils";
 class NewEvent extends Component {
   state = {
     loading: false,
-    error: false,
-    event: {
-      title: "Kachi's event 2",
-      location: "Hs 10, A1 Close, 311 Road, Gowon Estate, Egbeda, Lagos",
-      description:
-        "It's really just an excuse to waste money, nothing too serious tbh",
-      date: "2017-09-29",
-      startTime: "12pm",
-      price: 0,
-      image:
-        "https://media.textadventures.co.uk/coverart/b69281d8-93b6-4c6a-a964-441dddfe8a9d.jpg",
-      link: ""
-    }
+    error: false
   };
 
   handleChange = e => {
@@ -40,7 +27,6 @@ class NewEvent extends Component {
     this.setState({ loading: true });
     API.postEvent(this.state.event)
       .then(({ data }) => {
-        // this.props.history.push(`/vip/events/${ data.event._id }`);
         this.props.history.push('/vip/events');
       })
       .catch(error => {
@@ -61,18 +47,15 @@ class NewEvent extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Input
           name="title"
-          value={event.title}
           onChange={this.handleChange}
           placeholder="Title"
         />
         <Input
           name="location"
-          value={event.location}
           onChange={this.handleChange}
           placeholder="Location"
         />
         <TextArea
-          value={event.description}
           placeholder="Description"
           name="description"
           rows="6"
@@ -81,37 +64,31 @@ class NewEvent extends Component {
         <Input
           name="date"
           type="date"
-          value={moment(event.date).format("YYYY-MM-DD")}
           onChange={this.handleChange}
           placeholder="Date (YYYYMMDD)"
         />
         <Input
           name="startTime"
-          value={event.startTime}
           onChange={this.handleChange}
           placeholder="Start time (e.g. 8pm)"
         />
         <Input
           name="endTime"
-          value={event.endTime}
           onChange={this.handleChange}
           placeholder="End time (e.g. 12pm)"
         />
         <Input
           name="price"
-          value={event.price}
           onChange={this.handleChange}
           placeholder="Price (in naira) or Free"
         />
         <Input
           name="image"
-          value={event.image}
           onChange={this.handleChange}
           placeholder="Link to event image"
         />
         <Input
           name="link"
-          value={event.link}
           onChange={this.handleChange}
           placeholder="Link to event website"
         />
