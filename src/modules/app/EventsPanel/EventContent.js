@@ -52,9 +52,7 @@ const EventContent = ({ event }) => {
       <Divider />
       <SubTitle>Our two cents</SubTitle>
       <Description>{event.description}</Description>
-      <FadeIn>
-        <Image src={event.image} alt={event.title + " image"} />
-      </FadeIn>
+      {event.image && <Image src={event.image} alt={event.title + " image"} />}
     </FadeIn>
   );
 };
