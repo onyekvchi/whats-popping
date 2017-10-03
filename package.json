@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "6.10.2",
+    "node": "6.10.0",
     "npm": "3.10.10"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
     "express": "^4.16.1",
     "history": "^4.6.3",
     "moment": "^2.18.1",
@@ -25,14 +26,15 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-transition-group": "^2.0.2",
     "redux": "^3.7.1",
-    "redux-saga": "^0.15.4"
+    "redux-saga": "^0.15.4",
+    "yarn": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
-    "express": "^4.15.4",
+    "express": "^4.16.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^6.1.1",
